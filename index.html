@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VÉRTICE | Ingeniería Estructural en Acero & Montaje Industrial en Perú</title>
-    <meta name="description" content="Ingeniería de detalle BIM, fabricación certificada y montaje de estructuras metálicas sismorresistentes de mediana y gran luz en todo el Perú bajo Norma E.090 y AWS D1.1.">
+    <title>VÉRTICE | Estructuras Metálicas y Galvanizadas en Perú — Cotiza tu Proyecto</title>
+    <meta name="description" content="Diseñamos, fabricamos y montamos estructuras metálicas y galvanizadas para talleres, viviendas, almacenes y naves industriales en todo el Perú. Cotización sin compromiso en 24 horas.">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Space Grotesk (Ingeniería/Autoridad) + Inter (Lectura de alta fluidez) + JetBrains Mono (Datos técnicos) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +34,6 @@
     </script>
 
     <style>
-        /* Patrón sutil de plano de ingeniería para reforzar autoridad técnica sin ruido visual */
         .bg-blueprint {
             background-color: #090D16;
             background-image: 
@@ -44,15 +41,6 @@
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 40px 40px;
         }
-        
-        .bg-blueprint-dense {
-            background-image: 
-                linear-gradient(to right, rgba(245, 158, 11, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(245, 158, 11, 0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        /* Efecto Von Restorff (Aislamiento visual del CTA principal) */
         .cta-glow {
             box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.45);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -61,64 +49,60 @@
             box-shadow: 0 0 35px 0px rgba(245, 158, 11, 0.65);
             transform: translateY(-2px);
         }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #090D16; }
+        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
 
-        /* Animación de pulso técnico */
-        @keyframes pulse-border {
-            0%, 100% { border-color: rgba(245, 158, 11, 0.4); }
-            50% { border-color: rgba(245, 158, 11, 0.9); }
+        /* Estilos para el disclosure progresivo */
+        details > summary {
+            list-style: none;
+            cursor: pointer;
         }
-        .active-spec-card {
-            animation: pulse-border 2.5s infinite;
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] .chev {
+            transform: rotate(180deg);
+        }
+        .chev {
+            transition: transform 0.25s ease;
         }
 
-        /* Scrollbar elegante */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #090D16;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1E293B;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #F59E0B;
-        }
+        /* Fuentes suaves para textos largos */
+        .text-balance { text-wrap: balance; }
     </style>
 </head>
 <body class="bg-obsidian text-slate-100 font-sans antialiased selection:bg-amberGold selection:text-obsidian overflow-x-hidden">
 
-    <!-- TOP BAR: Reducción inmediata de cortisol (Señales de Cumplimiento Normativo Peruano e Internacional) -->
+    <!-- TOP BAR SIMPLIFICADO: Confianza en lenguaje común (no técnico) -->
     <div class="bg-slate-950 border-b border-slate-800/80 text-xs text-slate-400 py-2.5 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-            <div class="flex items-center space-x-4 sm:space-x-6">
-                <span class="flex items-center gap-1.5 font-mono text-[11px] text-slate-300">
+            <div class="flex items-center space-x-4 sm:space-x-6 flex-wrap">
+                <span class="flex items-center gap-1.5">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    NORMA TÉCNICA E.090 (RNE PERÚ)
+                    <span class="text-slate-300">Cotización sin compromiso en 24 horas</span>
                 </span>
-                <span class="hidden md:flex items-center gap-1.5 font-mono text-[11px]">
-                    <svg class="w-3.5 h-3.5 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    HOMOLOGACIÓN AWS D1.1 / ASME IX
+                <span class="hidden md:flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Lima y todo el Perú
                 </span>
-                <span class="hidden lg:flex items-center gap-1.5 font-mono text-[11px]">
-                    <svg class="w-3.5 h-3.5 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                    PLANTA LURÍN & COBERTURA NACIONAL
+                <span class="hidden lg:flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    Habla directo con un ingeniero
                 </span>
             </div>
             <div class="flex items-center gap-4 ml-auto">
-                <span class="font-mono text-[11px] text-slate-400 hidden sm:inline">Atención Directa a Gerencia de Proyectos:</span>
-                <a href="#evaluacion-tecnica" class="text-amberGold hover:text-amber-300 font-mono font-medium underline underline-offset-4 transition">
-                    Mesa de Ingeniería BIM →
+                <a href="#cotizar" class="text-amberGold hover:text-amber-300 font-medium underline underline-offset-4 transition">
+                    Cotizar mi proyecto →
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- HEADER STICKY: Navegación de baja carga cognitiva (Patrón en F) -->
+    <!-- HEADER -->
     <header class="sticky top-0 z-40 backdrop-blur-md bg-obsidian/85 border-b border-slate-800/80 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo -->
             <a href="#" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amberGold to-amber-600 flex items-center justify-center shadow-lg shadow-amberGold/20 group-hover:scale-105 transition">
                     <svg class="w-6 h-6 text-obsidian" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -127,898 +111,717 @@
                 </div>
                 <div>
                     <span class="font-display font-bold text-xl tracking-tight text-white block leading-none">VÉRTICE</span>
-                    <span class="font-mono text-[10px] tracking-widest text-amberGold uppercase block mt-1">Ingeniería Estructural</span>
+                    <span class="font-mono text-[10px] tracking-widest text-amberGold uppercase block mt-1">Estructuras Metálicas</span>
                 </div>
             </a>
 
-            <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#soluciones" class="hover:text-amberGold transition">Especialidades</a>
-                <a href="#configurador" class="hover:text-amberGold transition flex items-center gap-1.5">
-                    <span>Especificador Técnico</span>
-                    <span class="px-1.5 py-0.5 text-[10px] font-mono bg-amberGold/15 text-amberGold rounded border border-amberGold/30">Interactivo</span>
-                </a>
-                <a href="#portafolio" class="hover:text-amberGold transition">Obras Ejecutadas</a>
-                <a href="#metodologia" class="hover:text-amberGold transition">Rigor Normativo</a>
-                <a href="#faq" class="hover:text-amberGold transition">Preguntas Clave</a>
+                <a href="#ayudamos" class="hover:text-amberGold transition">Cómo te ayudamos</a>
+                <a href="#proyectos" class="hover:text-amberGold transition">Proyectos</a>
+                <a href="#proceso" class="hover:text-amberGold transition">Cómo trabajamos</a>
+                <a href="#faq" class="hover:text-amberGold transition">Preguntas</a>
             </nav>
 
-            <!-- Primary CTA (Von Restorff Isolation Effect) -->
             <div class="hidden md:flex items-center gap-3">
-                <a href="#evaluacion-tecnica" class="bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-sm px-5 py-3 rounded-lg cta-glow flex items-center gap-2">
-                    <span>Solicitar Evaluación Técnica</span>
+                <a href="#cotizar" class="bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-sm px-5 py-3 rounded-lg cta-glow flex items-center gap-2">
+                    <span>Cotiza tu proyecto</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:text-amberGold">
                 <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
-            <a href="#soluciones" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Especialidades Estructurales</a>
-            <a href="#configurador" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-amberGold font-medium">Especificador Técnico de Envergadura</a>
-            <a href="#portafolio" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Obras Ejecutadas en Perú</a>
-            <a href="#metodologia" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Ingeniería BIM & Normativa</a>
-            <a href="#faq" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Respuestas a Gerencia</a>
+            <a href="#ayudamos" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Cómo te ayudamos</a>
+            <a href="#proyectos" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Proyectos</a>
+            <a href="#proceso" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Cómo trabajamos</a>
+            <a href="#faq" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Preguntas</a>
             <div class="pt-2">
-                <a href="#evaluacion-tecnica" class="w-full bg-amberGold text-obsidian font-display font-bold py-3.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg">
-                    <span>Agendar Evaluación de Proyecto</span>
+                <a href="#cotizar" class="w-full bg-amberGold text-obsidian font-display font-bold py-3.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg">
+                    <span>Cotiza tu proyecto</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION: Patrón visual Z, Autoridad Técnica y Filtro Implícito de Escala -->
-    <section class="relative bg-blueprint pt-10 pb-20 lg:pt-16 lg:pb-28 overflow-hidden border-b border-slate-800/80">
-        <!-- Radial Subtle Lighting -->
+    <!-- HERO: Claridad sobre complejidad. Un solo CTA primario. -->
+    <section class="relative bg-blueprint pt-12 pb-16 lg:pt-20 lg:pb-24 overflow-hidden border-b border-slate-800/80">
         <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-amberGold/10 rounded-full blur-[130px] pointer-events-none"></div>
         <div class="absolute bottom-0 left-10 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
                 
-                <!-- Columna Izquierda: Propuesta de Valor de Alta Certeza (7 cols) -->
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-amberGold">
+                <div class="lg:col-span-7 space-y-7">
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-xs text-slate-300">
                         <span class="w-2 h-2 rounded-full bg-amberGold"></span>
-                        <span>INGENIERÍA, FABRICACIÓN EN PLANTA Y MONTAJE LLAVE EN MANO</span>
+                        <span>Diseño, fabricación y montaje en todo el Perú</span>
                     </div>
 
-                    <h1 class="font-display font-bold text-3xl sm:text-5xl lg:text-[54px] text-white leading-[1.1] tracking-tight">
-                        Estructuras Metálicas de <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberGold via-amber-300 to-amberGold">Precisión Milimétrica</span> para Proyectos que Exigen Cero Margen de Error.
+                    <h1 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.15] tracking-tight text-balance">
+                        Estructuras metálicas que se montan rápido, <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberGold via-amber-300 to-amberGold">duran décadas</span> y no te dan sorpresas.
                     </h1>
 
-                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
-                        Diseñamos, fabricamos y montamos naves industriales, centros logísticos, cubiertas de gran luz y arquitectura corporativa o residencial de alta gama en todo el Perú. Modelado <strong class="text-white font-semibold">BIM Tekla LOD 400</strong> que garantiza costos cerrados, inmunidad sísmica y entrega en plazo contractual.
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                        Techos, coberturas, ampliaciones, naves y estructuras galvanizadas para tu taller, vivienda, almacén o planta industrial. Tú nos cuentas qué necesitas; nosotros ponemos la ingeniería, el acero y el montaje.
                     </p>
 
-                    <!-- Puntos de Seguridad Cognitiva (Evita el temor a retrasos o sobrecostos) -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-                        <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3.5 flex items-start gap-3">
-                            <svg class="w-5 h-5 text-amberGold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                            <div>
-                                <div class="text-xs font-mono uppercase text-slate-400">Acero Certificado</div>
-                                <div class="text-sm font-semibold text-white">ASTM A36 / A572 G50</div>
-                            </div>
-                        </div>
-                        <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3.5 flex items-start gap-3">
-                            <svg class="w-5 h-5 text-amberGold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <div>
-                                <div class="text-xs font-mono uppercase text-slate-400">Plazo Garantizado</div>
-                                <div class="text-sm font-semibold text-white">-35% Tiempo en Obra</div>
-                            </div>
-                        </div>
-                        <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3.5 flex items-start gap-3">
-                            <svg class="w-5 h-5 text-amberGold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                            <div>
-                                <div class="text-xs font-mono uppercase text-slate-400">Control de Calidad</div>
-                                <div class="text-sm font-semibold text-white">Dossier & Ensayos END</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CTAs Jerarquizados -->
-                    <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                        <a href="#configurador" class="bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-base px-7 py-4 rounded-xl cta-glow flex items-center justify-center gap-3">
-                            <span>Dimensionar Mi Proyecto Ahora</span>
+                    <!-- CTAs: uno principal, uno secundario discreto -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5">
+                        <a href="#cotizar" class="bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-base px-7 py-4 rounded-xl cta-glow flex items-center justify-center gap-3">
+                            <span>Cuéntanos qué necesitas construir</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
                         </a>
-                        <a href="#evaluacion-tecnica" class="bg-slate-900/90 hover:bg-slate-800 text-white border border-slate-700 font-display font-semibold text-base px-6 py-4 rounded-xl flex items-center justify-center gap-2 transition">
-                            <svg class="w-5 h-5 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                            <span>Tengo Planos / Expediente</span>
+                        <a href="#avanzado" class="text-slate-400 hover:text-amberGold text-sm font-medium underline underline-offset-4 transition text-center sm:text-left">
+                            ¿Ya tienes planos o proyecto definido? →
                         </a>
                     </div>
 
-                    <p class="text-xs text-slate-400 font-mono flex items-center gap-2">
-                        <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        Evaluación de viabilidad estructural y metrado preliminar sin costo para proyectos en etapa de ejecución o diseño definitivo.
-                    </p>
+                    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-400 pt-2">
+                        <span class="flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Visita técnica sin costo
+                        </span>
+                        <span class="flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Precio cerrado por contrato
+                        </span>
+                        <span class="flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Garantía estructural escrita
+                        </span>
+                    </div>
                 </div>
 
-                <!-- Columna Derecha: Visual de Alto Impacto + Telemetría Estructural (5 cols) -->
+                <!-- Imagen con overlay suave -->
                 <div class="lg:col-span-5 relative">
                     <div class="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-900">
                         <img 
                             src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85" 
-                            alt="Montaje de estructura metálica de gran envergadura en Perú" 
-                            class="w-full h-[420px] sm:h-[480px] object-cover object-center brightness-90 contrast-110"
-                            onerror="this.src='https://placehold.co/800x600/111827/F59E0B?text=Ingenieria+Estructural+Peru'"
+                            alt="Montaje de estructura metálica en Perú" 
+                            class="w-full h-[360px] sm:h-[440px] object-cover object-center brightness-90 contrast-110"
+                            onerror="this.src='https://placehold.co/800x600/111827/F59E0B?text=Estructuras+Metalicas+Peru'"
                         >
                         <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
 
-                        <!-- Tarjeta Flotante Superior: Norma Sísmica -->
-                        <div class="absolute top-4 left-4 right-4 sm:right-auto bg-obsidian/90 backdrop-blur-md border border-slate-700/80 rounded-xl p-3.5 shadow-lg">
-                            <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-amberGold/20 border border-amberGold/40 flex items-center justify-center text-amberGold font-mono font-bold text-xs">
-                                    BIM
-                                </div>
-                                <div>
-                                    <div class="text-[11px] font-mono text-amberGold uppercase">Tolerancia de Fabricación CNC</div>
-                                    <div class="text-xs font-semibold text-white">± 0.8 mm • Prefabricado 100% Empernable/Soldado</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Tarjeta Inferior: Ficha de Obra Real -->
                         <div class="absolute bottom-4 left-4 right-4 bg-slate-950/95 backdrop-blur-md border border-slate-800 rounded-xl p-4">
-                            <div class="flex items-center justify-between border-b border-slate-800 pb-2.5 mb-2.5">
+                            <div class="flex items-center justify-between gap-3">
                                 <div>
-                                    <span class="text-[10px] font-mono uppercase tracking-wider text-amberGold block">Caso de Éxito • Parque Industrial Lurín</span>
-                                    <h3 class="text-sm font-display font-bold text-white">Centro de Distribución Logística de Gran Luz</h3>
+                                    <span class="text-[10px] font-mono uppercase tracking-wider text-amberGold block">Obra reciente</span>
+                                    <h3 class="text-sm font-display font-bold text-white">Centro de Distribución Logística · Lurín</h3>
                                 </div>
-                                <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono text-xs">Entregado</span>
+                                <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono text-xs whitespace-nowrap">Entregado</span>
                             </div>
-                            <div class="grid grid-cols-3 gap-2 text-center font-mono">
+                            <div class="grid grid-cols-3 gap-2 text-center font-mono mt-3">
                                 <div class="bg-slate-900/90 rounded-lg p-2">
-                                    <span class="text-[10px] text-slate-400 block">ÁREA TECHADA</span>
-                                    <span class="text-xs sm:text-sm font-bold text-white">3,450 m²</span>
+                                    <span class="text-[10px] text-slate-400 block">ÁREA</span>
+                                    <span class="text-xs font-bold text-white">3,450 m²</span>
                                 </div>
                                 <div class="bg-slate-900/90 rounded-lg p-2">
                                     <span class="text-[10px] text-slate-400 block">LUZ LIBRE</span>
-                                    <span class="text-xs sm:text-sm font-bold text-amberGold">38.0 ml</span>
+                                    <span class="text-xs font-bold text-amberGold">38 m</span>
                                 </div>
                                 <div class="bg-slate-900/90 rounded-lg p-2">
-                                    <span class="text-[10px] text-slate-400 block">EJECUCIÓN</span>
-                                    <span class="text-xs sm:text-sm font-bold text-white">42 Días</span>
+                                    <span class="text-[10px] text-slate-400 block">PLAZO</span>
+                                    <span class="text-xs font-bold text-white">42 días</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- BARRA DE MÉTRICAS DE AUTORIDAD (Anclaje Cuantitativo para decisores racionales) -->
+    <!-- CONFIANZA EN NÚMEROS (lenguaje simple) -->
     <section class="bg-slate-950 border-b border-slate-800/80 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                 <div class="border-l-2 border-amberGold pl-4">
-                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">+145,000 <span class="text-amberGold text-xl">m²</span></div>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Diseñados, fabricados y montados en Lima y provincias.</p>
+                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">+145 mil <span class="text-amberGold text-lg">m²</span></div>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">construidos en Lima y provincias.</p>
                 </div>
                 <div class="border-l-2 border-amberGold pl-4">
-                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">+6,800 <span class="text-amberGold text-xl">TN</span></div>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">De acero estructural ASTM A36 y A572 procesado en planta.</p>
+                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">+15 <span class="text-amberGold text-lg">años</span></div>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">de garantía escrita en cada estructura.</p>
                 </div>
                 <div class="border-l-2 border-amberGold pl-4">
-                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">99.4<span class="text-amberGold text-xl">%</span></div>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Cumplimiento de cronograma en entregas de montaje crítico.</p>
+                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">99.4<span class="text-amberGold text-lg">%</span></div>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">de obras entregadas en el plazo prometido.</p>
                 </div>
                 <div class="border-l-2 border-amberGold pl-4">
-                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">15 <span class="text-amberGold text-xl">Años</span></div>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">De garantía estructural escrita e historial de 0 siniestros.</p>
+                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">0 <span class="text-amberGold text-lg">accidentes</span></div>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">en 8 años de montajes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ESPECIALIDADES DE ALTA ENVERGADURA (Filtro implícito: Sin trabajos domésticos menores) -->
-    <section id="soluciones" class="py-20 lg:py-24 bg-obsidian relative">
+    <!-- CÓMO TE AYUDAMOS: Por resultado, no por tipología -->
+    <section id="ayudamos" class="py-20 lg:py-24 bg-obsidian relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
-                <div>
-                    <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">// LÍNEAS DE INGENIERÍA Y EJECUCIÓN</span>
-                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
-                        Soluciones Estructurales de Mediana y Gran Envergadura
-                    </h2>
-                </div>
-                <p class="text-slate-400 text-sm sm:text-base max-w-md">
-                    Intervenimos de forma integral desde la cimentación y pernos de anclaje hasta el cerramiento termoacústico y entrega de dossier de calidad.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Card 1: Naves Industriales -->
-                <div class="group bg-slate-900/60 border border-slate-800 hover:border-amberGold/60 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="h-52 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="Naves Industriales y Centros Logísticos" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 brightness-90" onerror="this.src='https://placehold.co/600x400/111827/F59E0B?text=Naves+Industriales'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
-                            <span class="absolute top-3 left-3 bg-obsidian/90 border border-slate-700 text-amberGold font-mono text-[11px] px-2.5 py-1 rounded">
-                                Pórticos Alma Llena / Celosía
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="font-display font-bold text-xl text-white group-hover:text-amberGold transition">
-                                Naves Industriales y Almacenes Logísticos
-                            </h3>
-                            <p class="text-slate-400 text-sm mt-2.5 leading-relaxed">
-                                Estructuras optimizadas en peso/resistencia para plantas de producción, almacenes de gran altura (racks selectivos) y naves con puente grúa.
-                            </p>
-                            <ul class="mt-4 space-y-2 text-xs font-mono text-slate-300 border-t border-slate-800/80 pt-4">
-                                <li class="flex items-center gap-2"><span class="text-amberGold">▪</span> Luces libres de 15 m hasta 60 m sin columnas intermedias</li>
-                                <li class="flex items-center gap-2"><span class="text-amberGold">▪</span> Coberturas en Aluzinc TR4 o Panel Termoacústico PIR/PUR</li>
-                                <li class="flex items-center gap-2"><span class="text-amberGold">▪</span> Cálculo dinámico conforme a Norma E.030 y E.090</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="selectConfiguratorPreset('nave', '500-1500')" class="w-full py-3 px-4 rounded-xl bg-slate-800/90 hover:bg-amberGold hover:text-obsidian text-slate-200 font-display font-semibold text-sm transition flex items-center justify-between">
-                            <span>Configurar Nave o Almacén</span>
-                            <span>→</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Card 2: Edificaciones Corporativas & Ampliaciones -->
-                <div class="group bg-slate-900/60 border border-slate-800 hover:border-amberGold/60 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="h-52 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1541888946425-d09bb18086f6?auto=format&fit=crop&w=800&q=80" alt="Edificaciones Comerciales y Mezanines Estructurales" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 brightness-90" onerror="this.src='https://placehold.co/600x400/111827/F59E0B?text=Edificacion+Corporativa'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
-                            <span class="absolute top-3 left-3 bg-obsidian/90 border border-slate-700 text-amberGold font-mono text-[11px] px-2.5 py-1 rounded">
-                                Sistema Placa Colaborante
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="font-display font-bold text-xl text-white group-hover:text-amberGold transition">
-                                Edificaciones Comerciales, Clínicas y Mezanines
-                            </h3>
-                            <p class="text-slate-400 text-sm mt-2.5 leading-relaxed">
-                                Multiplicación de área útil mediante entrepisos metálicos de alta capacidad de carga (Steel Deck), ampliaciones verticales rápidas y centros empresariales.
-                            </p>
-                            <ul class="mt-4 space-y-2 text-xs font-mono text-slate-300 border-t border-slate-800/80 pt-4">
-                                <li class="flex items-center gap-2"><span class="text-amberGold">▪</span> Sobrecargas de diseño desde 350 kg/m² hasta 1,500 kg/m²</li>
-                                <li class="flex items-center gap-2"><span class="text-amberGold">▪</span> Protección ignífuga intumescente certificada (UL / NFPA)</li>
-                                <li class="flex items-center gap-2"><span class="text-amberGold">▪</span> Montaje limpio sin interrumpir operaciones continuas</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="selectConfiguratorPreset('comercial', '150-500')" class="w-full py-3 px-4 rounded-xl bg-slate-800/90 hover:bg-amberGold hover:text-obsidian text-slate-200 font-display font-semibold text-sm transition flex items-center justify-between">
-                            <span>Configurar Edificación / Mezanine</span>
-                            <span>→</span>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Card 3: Residencial de Alta Gama & Arquitectura en Acero -->
-                <div class="group bg-slate-900/60 border border-slate-800 hover:border-amberGold/60 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="h-52 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Arquitectura en Acero y Residencias de Alta Gama" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 brightness-90" onerror="this.src='https://placehold.co/600x400/111827/F59E0B?text=Arquitectura+De+Alta+Gama'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
-                            <span class="absolute top-3 left-3 bg-obsidian/90 border border-slate-700 text-amberGold font-mono text-[11px] px-2.5 py-1 rounded">
-                                Acero Visto AESS / Gran Voladizo
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="font-display font-bold text-xl text-white group-hover:text-amberGold transition">
-                                Arquitectura de Autor, Clubes y Residencias Premium
-                            </h3>
-                            <p class="text-slate-400 text-sm mt-2.5 leading-relaxed">
-                                Estructuras arquitectónicas expuestas (AESS) con voladizos audaces, dobles alturas, casas de playa o campo en terrenos de topografía compleja y cubiertas deportivas.
-                            </p>
-                            <ul class="mt-4 space-y-2 text-xs font-mono text-slate-300 border-t border-slate-800/80 pt-4">
-                                <li class="flex items-center gap-2"><span class="text-amberGold">▪</span> Acabado epóxico poliamida y poliuretano anticorrosivo marino</li>
-                                <li class="flex items-center gap-2"><span class="text-amberGold">▪</span> Soldaduras esmeriladas al ras con estética arquitectónica</li>
-                                <li class="flex items-center gap-2"><span class="text-amberGold">▪</span> Integración exacta con cristal templado, madera y concreto</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6">
-                        <button onclick="selectConfiguratorPreset('arquitectonica', '150-500')" class="w-full py-3 px-4 rounded-xl bg-slate-800/90 hover:bg-amberGold hover:text-obsidian text-slate-200 font-display font-semibold text-sm transition flex items-center justify-between">
-                            <span>Configurar Obra Arquitectónica</span>
-                            <span>→</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- CONFIGURADOR TÉCNICO INTERACTIVO (Principio Neurocientífico: Efecto Dotación / Dopamina / Calificación Implícita) -->
-    <section id="configurador" class="py-20 lg:py-24 bg-slate-950 border-y border-slate-800 bg-blueprint-dense">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="inline-block font-mono text-xs uppercase tracking-widest text-amberGold bg-amberGold/10 border border-amberGold/30 px-3 py-1 rounded-full mb-3">
-                    HERRAMIENTA DE PRE-INGENIERÍA INTERACTIVA
-                </span>
-                <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">
-                    Especificador de Envergadura y Parámetros Estructurales
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">¿Qué necesitas resolver?</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight text-balance">
+                    Cuéntanos tu necesidad. Nosotros le ponemos la ingeniería.
                 </h2>
                 <p class="text-slate-400 text-sm sm:text-base mt-3">
-                    Seleccione las variables de su proyecto para obtener al instante la especificación normativa recomendada, el tiempo estimado de fabricación/montaje y trasladar los parámetros a nuestra Mesa de Ingeniería.
+                    No necesitas saber de normas ni de planos. Elige la situación que más se parezca a la tuya y te orientamos.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 
-                <!-- Panel de Selección (7 columnas) -->
-                <div class="lg:col-span-7 bg-obsidian/95 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl space-y-8">
-                    
-                    <!-- Paso 1: Tipología -->
-                    <div>
-                        <label class="flex items-center justify-between text-xs font-mono uppercase tracking-wider text-slate-400 mb-3">
-                            <span>01. Tipología de Estructura</span>
-                            <span class="text-amberGold">Requerido</span>
-                        </label>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="type-selector">
-                            <button type="button" data-type="nave" class="cfg-type-btn text-left p-4 rounded-xl border-2 border-amberGold bg-amberGold/10 transition flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-amberGold text-obsidian font-mono font-bold flex items-center justify-center shrink-0 mt-0.5">A</div>
-                                <div>
-                                    <div class="font-display font-bold text-sm text-white">Nave Industrial / Almacén</div>
-                                    <div class="text-xs text-slate-400 mt-0.5">Pórticos, planta productiva o centro logístico</div>
-                                </div>
-                            </button>
-                            <button type="button" data-type="comercial" class="cfg-type-btn text-left p-4 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 font-mono font-bold flex items-center justify-center shrink-0 mt-0.5">B</div>
-                                <div>
-                                    <div class="font-display font-bold text-sm text-white">Edificación / Mezanine Comercial</div>
-                                    <div class="text-xs text-slate-400 mt-0.5">Entrepisos Steel Deck, ampliación corporativa</div>
-                                </div>
-                            </button>
-                            <button type="button" data-type="arquitectonica" class="cfg-type-btn text-left p-4 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 font-mono font-bold flex items-center justify-center shrink-0 mt-0.5">C</div>
-                                <div>
-                                    <div class="font-display font-bold text-sm text-white">Residencial Premium / Arquitectura</div>
-                                    <div class="text-xs text-slate-400 mt-0.5">Vivienda de alta gama, club, voladizos AESS</div>
-                                </div>
-                            </button>
-                            <button type="button" data-type="cobertura" class="cfg-type-btn text-left p-4 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-slate-800 text-slate-300 font-mono font-bold flex items-center justify-center shrink-0 mt-0.5">D</div>
-                                <div>
-                                    <div class="font-display font-bold text-sm text-white">Cobertura de Gran Luz / Deportiva</div>
-                                    <div class="text-xs text-slate-400 mt-0.5">Techos parabólicos, polideportivos, colegios</div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Paso 2: Escala / Área (Filtro Natural de Presupuesto Alto) -->
-                    <div>
-                        <label class="flex items-center justify-between text-xs font-mono uppercase tracking-wider text-slate-400 mb-3">
-                            <span>02. Área Estimada de Intervención (m²)</span>
-                            <span class="text-slate-400">Escala Estructural</span>
-                        </label>
-                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="area-selector">
-                            <button type="button" data-area="150-500" class="cfg-area-btn p-3.5 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition">
-                                <div class="font-mono font-bold text-sm text-white">120 – 450 m²</div>
-                                <div class="text-[11px] text-slate-400 mt-1">Mediana Escala</div>
-                            </button>
-                            <button type="button" data-area="500-1500" class="cfg-area-btn p-3.5 rounded-xl border-2 border-amberGold bg-amberGold/10 text-center transition">
-                                <div class="font-mono font-bold text-sm text-white">450 – 1,500 m²</div>
-                                <div class="text-[11px] text-amberGold mt-1">Alta Demanda</div>
-                            </button>
-                            <button type="button" data-area="1500-3500" class="cfg-area-btn p-3.5 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition">
-                                <div class="font-mono font-bold text-sm text-white">1,500 – 3,500 m²</div>
-                                <div class="text-[11px] text-slate-400 mt-1">Gran Luz</div>
-                            </button>
-                            <button type="button" data-area="3500+" class="cfg-area-btn p-3.5 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition">
-                                <div class="font-mono font-bold text-sm text-white">+3,500 m²</div>
-                                <div class="text-[11px] text-slate-400 mt-1">Complejo / Planta</div>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Paso 3: Ubicación Geográfica y Condición Ambiental -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label for="cfg-zone" class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
-                                03. Zona Geográfica en Perú
-                            </label>
-                            <select id="cfg-zone" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amberGold">
-                                <option value="costa">Lima Metropolitana / Callao / Costa (Zona Sísmica 4)</option>
-                                <option value="costa_marina">Litoral / Cercanía Marina &lt; 2km (Alta Salinidad C5-M)</option>
-                                <option value="sierra">Arequipa / Cusco / Junín / Sierra (Viento, Granizo y Altura)</option>
-                                <option value="norte_selva">Trujillo / Piura / Oriente (Drenaje Pluvial Intensivo)</option>
-                            </select>
+                <!-- Card 1: Techos simples -->
+                <div class="group bg-slate-900/60 border border-slate-800 hover:border-amberGold/60 rounded-2xl p-7 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-amberGold/15 border border-amberGold/30 flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V10"></path></svg>
                         </div>
                         <div>
-                            <label for="cfg-stage" class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
-                                04. Estado Actual del Proyecto
-                            </label>
-                            <select id="cfg-stage" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amberGold">
-                                <option value="expediente">Cuento con Planos Estructurales / Expediente</option>
-                                <option value="arquitectura">Tengo Arquitectura / Requiere Ingeniería Estructural</option>
-                                <option value="terreno">Terreno Saneado / Diseño + Construcción Llave en Mano</option>
-                            </select>
+                            <h3 class="font-display font-bold text-xl text-white">Un techo para mi taller o vivienda</h3>
+                            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                                Coberturas galvanizadas, techos para patios, cocheras o almacenes pequeños. Rápido, resistente y sin complicaciones.
+                            </p>
+                            <div class="mt-3 text-xs font-mono text-slate-500">Desde 80 m² · Entrega en 3 a 5 semanas</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Panel de Diagnóstico Técnico en Tiempo Real (5 columnas) -->
-                <div class="lg:col-span-5 bg-gradient-to-b from-slate-900 to-obsidian border-2 border-amberGold/50 rounded-2xl p-6 sm:p-8 shadow-2xl active-spec-card">
-                    <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-5">
+                <!-- Card 2: Ampliaciones -->
+                <div class="group bg-slate-900/60 border border-slate-800 hover:border-amberGold/60 rounded-2xl p-7 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-amberGold/15 border border-amberGold/30 flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 20V10l8-6 8 6v10M9 20v-6h6v6"></path></svg>
+                        </div>
                         <div>
-                            <span class="font-mono text-[11px] uppercase text-amberGold tracking-wider block">FICHA DE PRE-ESPECIFICACIÓN</span>
-                            <h3 id="spec-title" class="font-display font-bold text-xl text-white mt-0.5">Nave Industrial (450 – 1,500 m²)</h3>
+                            <h3 class="font-display font-bold text-xl text-white">Ampliar o ganar metros sin obra eterna</h3>
+                            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                                Entretechos, segundos pisos y mezanines metálicos que se instalan sin tumbar paredes y sin parar tu negocio.
+                            </p>
+                            <div class="mt-3 text-xs font-mono text-slate-500">Desde 100 m² · 5 a 8 semanas</div>
                         </div>
-                        <span class="px-2.5 py-1 rounded bg-amberGold/15 text-amberGold font-mono text-xs font-semibold border border-amberGold/30">
-                            E.090 / RNE
-                        </span>
-                    </div>
-
-                    <div class="space-y-4 font-mono text-xs">
-                        <div class="bg-slate-950/90 border border-slate-800/90 rounded-xl p-3.5">
-                            <span class="text-slate-400 block text-[10px] uppercase">Sistema Estructural Recomendado</span>
-                            <span id="spec-system" class="text-white font-semibold text-sm block mt-1">Pórticos rígidos de sección variable en acero ASTM A572 Grado 50 + Arriostres de cubierta.</span>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="bg-slate-950/90 border border-slate-800/90 rounded-xl p-3.5">
-                                <span class="text-slate-400 block text-[10px] uppercase">Tonelaje Estimado</span>
-                                <span id="spec-tonnage" class="text-amberGold font-bold text-base block mt-1">18 a 48 TN Acero</span>
-                            </div>
-                            <div class="bg-slate-950/90 border border-slate-800/90 rounded-xl p-3.5">
-                                <span class="text-slate-400 block text-[10px] uppercase">Plazo Fab. + Montaje</span>
-                                <span id="spec-timeline" class="text-emerald-400 font-bold text-base block mt-1">5 a 8 Semanas</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-950/90 border border-slate-800/90 rounded-xl p-3.5">
-                            <span class="text-slate-400 block text-[10px] uppercase">Esquema Anticorrosivo & Normativa</span>
-                            <span id="spec-coating" class="text-slate-200 block mt-1">Granallado comercial SSPC-SP6 + Base Epóxica Zincromato + Acabado Poliuretano Alifático (Zona Sísmica 4).</span>
-                        </div>
-
-                        <div class="bg-slate-950/90 border border-slate-800/90 rounded-xl p-3.5">
-                            <span class="text-slate-400 block text-[10px] uppercase">Entregables de Ingeniería Incluidos</span>
-                            <span id="spec-deliverables" class="text-slate-200 block mt-1">Memoria de cálculo firmada CIP, Modelado BIM Tekla LOD 400, Planos de montaje y Dossier de Calidad AWS D1.1.</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-6 pt-5 border-t border-slate-800">
-                        <button type="button" onclick="transferSpecsToForm()" class="w-full bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-sm sm:text-base py-4 px-5 rounded-xl cta-glow flex items-center justify-center gap-2">
-                            <span>Solicitar Propuesta Técnica con Estos Parámetros</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </button>
-                        <p class="text-[11px] text-center text-slate-400 mt-2.5">
-                            Un Ingeniero Civil Estructural Senior analizará su requerimiento en menos de 24 horas hábiles.
-                        </p>
                     </div>
                 </div>
 
+                <!-- Card 3: Naves / Almacenes -->
+                <div class="group bg-slate-900/60 border border-slate-800 hover:border-amberGold/60 rounded-2xl p-7 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-amberGold/15 border border-amberGold/30 flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 21h18M5 21V7l7-4 7 4v14M9 9h6M9 13h6M9 17h6"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-xl text-white">Naves y almacenes para mi operación</h3>
+                            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                                Estructuras de gran luz para plantas, centros logísticos o talleres con puente grúa. Ingeniería completa y certificada.
+                            </p>
+                            <div class="mt-3 text-xs font-mono text-slate-500">Desde 500 m² · 6 a 12 semanas</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Arquitectura / gran luz -->
+                <div class="group bg-slate-900/60 border border-slate-800 hover:border-amberGold/60 rounded-2xl p-7 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-amberGold/15 border border-amberGold/30 flex items-center justify-center shrink-0">
+                            <svg class="w-6 h-6 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3l9 6-9 6-9-6 9-6zM3 15l9 6 9-6"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-xl text-white">Una obra especial o a medida</h3>
+                            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                                Coberturas deportivas, estructuras vistas de arquitectura, voladizos, residencias premium o proyectos con geometrías fuera de lo común.
+                            </p>
+                            <div class="mt-3 text-xs font-mono text-slate-500">Proyectos a medida · 8 a 16 semanas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <p class="text-slate-400 text-sm">¿No sabes en qué categoría cae tu proyecto?</p>
+                <a href="#cotizar" class="inline-block mt-2 text-amberGold hover:text-amber-300 font-semibold underline underline-offset-4">
+                    Escríbenos igual, te orientamos sin costo →
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- PORTAFOLIO DE OBRAS EJECUTADAS EN PERÚ (Prueba Social de Alta Especificación) -->
-    <section id="portafolio" class="py-20 lg:py-24 bg-obsidian">
+    <!-- PROYECTOS: Incluir caso pequeño primero (prueba social "de par a par") -->
+    <section id="proyectos" class="py-20 lg:py-24 bg-slate-950 border-y border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
                 <div>
-                    <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">// EVIDENCIA TANGIBLE EN CAMPO</span>
-                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">
-                        Obras Ejecutadas con Precisión Certificada
-                    </h2>
+                    <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">Proyectos reales</span>
+                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Desde techos de taller hasta naves industriales</h2>
                 </div>
-                <!-- Filtros de Portafolio -->
-                <div class="flex flex-wrap gap-2">
-                    <button onclick="filterProjects('todos')" class="proj-filter-btn active px-4 py-2 rounded-lg font-mono text-xs bg-amberGold text-obsidian font-bold transition" data-filter="todos">Todos</button>
-                    <button onclick="filterProjects('industrial')" class="proj-filter-btn px-4 py-2 rounded-lg font-mono text-xs bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 transition" data-filter="industrial">Logístico & Industrial</button>
-                    <button onclick="filterProjects('corporativo')" class="proj-filter-btn px-4 py-2 rounded-lg font-mono text-xs bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 transition" data-filter="corporativo">Corporativo & Comercial</button>
-                    <button onclick="filterProjects('arquitectura')" class="proj-filter-btn px-4 py-2 rounded-lg font-mono text-xs bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 transition" data-filter="arquitectura">Arquitectura & Gran Luz</button>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="portfolio-grid">
-                
-                <!-- Proyecto 1 -->
-                <div class="project-card bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="industrial">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80" alt="Centro Logístico Huachipa" class="w-full h-full object-cover brightness-90 hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/800x500/111827/F59E0B?text=Centro+Logistico+Huachipa'">
-                        <div class="absolute top-3 left-3 bg-obsidian/90 backdrop-blur px-3 py-1 rounded text-xs font-mono text-amberGold border border-slate-700">
-                            Huachipa, Lima • Sector Agroexportador
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-display font-bold text-xl text-white">Nave de Procesamiento y Cámara Frigorífica Industrial</h3>
-                        <p class="text-slate-400 text-sm mt-2">
-                            Fabricación y montaje de pórticos de sección variable con cerramiento en panel termoaislante PIR de 100mm y estructura de soporte para túneles de frío.
-                        </p>
-                        <div class="grid grid-cols-3 gap-3 mt-5 pt-4 border-t border-slate-800 font-mono text-xs">
-                            <div>
-                                <span class="text-slate-500 block">ENVERGADURA</span>
-                                <span class="text-white font-bold">2,850 m²</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-500 block">ACERO PROCESADO</span>
-                                <span class="text-amberGold font-bold">112 Toneladas</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-500 block">TIEMPO ENTREGA</span>
-                                <span class="text-emerald-400 font-bold">48 Días</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 2 -->
-                <div class="project-card bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="corporativo">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Ampliación Corporativa San Isidro" class="w-full h-full object-cover brightness-90 hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/800x500/111827/F59E0B?text=Edificio+Corporativo+Lima'">
-                        <div class="absolute top-3 left-3 bg-obsidian/90 backdrop-blur px-3 py-1 rounded text-xs font-mono text-amberGold border border-slate-700">
-                            Ate / Javier Prado, Lima • Sector Salud & Corporativo
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-display font-bold text-xl text-white">Edificio de 4 Niveles en Acero + Losa Colaborante</h3>
-                        <p class="text-slate-400 text-sm mt-2">
-                            Estructura sismorresistente apernada en obra con vigas H ASTM A572 G50, conectores de corte Nelson Stud y protección contra fuego intumescente para 120 minutos.
-                        </p>
-                        <div class="grid grid-cols-3 gap-3 mt-5 pt-4 border-t border-slate-800 font-mono text-xs">
-                            <div>
-                                <span class="text-slate-500 block">ÁREA CONSTRUIDA</span>
-                                <span class="text-white font-bold">1,420 m²</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-500 block">ACERO PROCESADO</span>
-                                <span class="text-amberGold font-bold">94 Toneladas</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-500 block">ENSAYOS END</span>
-                                <span class="text-emerald-400 font-bold">100% Ultrasonido</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 3 -->
-                <div class="project-card bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="arquitectura">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80" alt="Residencia de Alta Gama Cieneguilla y Asia" class="w-full h-full object-cover brightness-90 hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/800x500/111827/F59E0B?text=Residencia+Acero+Visto'">
-                        <div class="absolute top-3 left-3 bg-obsidian/90 backdrop-blur px-3 py-1 rounded text-xs font-mono text-amberGold border border-slate-700">
-                            Cieneguilla / Condominio Sur • Arquitectura Premium
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-display font-bold text-xl text-white">Estructura Principal en Acero Visto con Voladizo de 7.5 m</h3>
-                        <p class="text-slate-400 text-sm mt-2">
-                            Ejecución de estructura integral para residencia de lujo y terraza social en pendiente rocosa. Perfiles tubulares y vigas W con acabado poliuretano negro mate arquitectónico.
-                        </p>
-                        <div class="grid grid-cols-3 gap-3 mt-5 pt-4 border-t border-slate-800 font-mono text-xs">
-                            <div>
-                                <span class="text-slate-500 block">ÁREA ESTRUCTURAL</span>
-                                <span class="text-white font-bold">480 m²</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-500 block">TOLERANCIA</span>
-                                <span class="text-amberGold font-bold">Estándar AESS 3</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-500 block">TIEMPO MONTAJE</span>
-                                <span class="text-emerald-400 font-bold">24 Días</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 4 -->
-                <div class="project-card bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between" data-category="industrial">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80" alt="Planta Industrial Arequipa" class="w-full h-full object-cover brightness-90 hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/800x500/111827/F59E0B?text=Nave+Puente+Grua+Arequipa'">
-                        <div class="absolute top-3 left-3 bg-obsidian/90 backdrop-blur px-3 py-1 rounded text-xs font-mono text-amberGold border border-slate-700">
-                            Parque Industrial Río Seco, Arequipa • Minería & Soporte
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-display font-bold text-xl text-white">Taller de Mantenimiento de Maquinaria Pesada con Puente Grúa</h3>
-                        <p class="text-slate-400 text-sm mt-2">
-                            Diseño sísmico, fabricación en Lima y montaje en Arequipa de nave de 14 metros de altura al hombro con vigas carrileras para puente grúa birriel de 20 toneladas.
-                        </p>
-                        <div class="grid grid-cols-3 gap-3 mt-5 pt-4 border-t border-slate-800 font-mono text-xs">
-                            <div>
-                                <span class="text-slate-500 block">ENVERGADURA</span>
-                                <span class="text-white font-bold">1,950 m²</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-500 block">CAPACIDAD GRÚA</span>
-                                <span class="text-amberGold font-bold">20 Toneladas</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-500 block">INCIDENTES SST</span>
-                                <span class="text-emerald-400 font-bold">0 Accidentes</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- METODOLOGÍA Y RIGOR TÉCNICO (Reducción de Amígdala / Eliminación de Incertidumbre) -->
-    <section id="metodologia" class="py-20 bg-slate-950 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">// PROTOCOLO DE CERTEZA INDUSTRIAL</span>
-                <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">
-                    Por Qué los Proyectos con VÉRTICE No Sufren Adicionales ni Retrasos en Obra
-                </h2>
-                <p class="text-slate-400 text-sm sm:text-base mt-3">
-                    El 85% de los sobrecostos en estructuras metálicas ocurren por improvisación en obra. Nuestro flujo industrializado resuelve cada milímetro en planta antes de movilizar grúas.
+                <p class="text-slate-400 text-sm max-w-md">
+                    Algunos de los proyectos que hemos entregado. Cada uno con su dossier de calidad, garantía escrita y fotos de avance.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-obsidian border border-slate-800 rounded-2xl p-6 relative">
-                    <span class="font-mono text-3xl font-bold text-amberGold/30 block mb-3">01</span>
-                    <h3 class="font-display font-bold text-lg text-white">Ingeniería & Gemelo Digital BIM</h3>
-                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                        Modelamos el 100% de las conexiones, cartelas y pernos en <strong>Tekla Structures LOD 400</strong> con detección anticipada de interferencias (Clash Detection).
-                    </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Proyecto pequeño -->
+                <div class="bg-obsidian border border-slate-800 rounded-2xl overflow-hidden flex flex-col">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Techo galvanizado taller" class="w-full h-full object-cover brightness-90 hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/111827/F59E0B?text=Techo+Galvanizado'">
+                        <span class="absolute top-3 left-3 bg-obsidian/90 border border-slate-700 text-amberGold font-mono text-[11px] px-2.5 py-1 rounded">
+                            Villa El Salvador, Lima
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-display font-bold text-lg text-white">Techo galvanizado para taller de carpintería</h3>
+                        <p class="text-slate-400 text-sm mt-2 flex-1">
+                            Cubrimos el patio de maniobras sin detener la producción. Estructura galvanizada instalada en un fin de semana.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-slate-800 font-mono text-xs">
+                            <div>
+                                <span class="text-slate-500 block">ÁREA</span>
+                                <span class="text-white font-bold">120 m²</span>
+                            </div>
+                            <div>
+                                <span class="text-slate-500 block">PLAZO</span>
+                                <span class="text-emerald-400 font-bold">3 semanas</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-obsidian border border-slate-800 rounded-2xl p-6 relative">
-                    <span class="font-mono text-3xl font-bold text-amberGold/30 block mb-3">02</span>
-                    <h3 class="font-display font-bold text-lg text-white">Trazabilidad de Acero y Corte CNC</h3>
-                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                        Trabajamos exclusivamente con coladas certificadas (Aceros Arequipa / Importación ASTM) y procesos automatizados de corte plasma/láser y taladrado CNC.
-                    </p>
+                <!-- Proyecto grande 1 -->
+                <div class="bg-obsidian border border-slate-800 rounded-2xl overflow-hidden flex flex-col">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Centro Logístico Huachipa" class="w-full h-full object-cover brightness-90 hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/111827/F59E0B?text=Centro+Logistico'">
+                        <span class="absolute top-3 left-3 bg-obsidian/90 border border-slate-700 text-amberGold font-mono text-[11px] px-2.5 py-1 rounded">
+                            Huachipa, Lima
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-display font-bold text-lg text-white">Nave de procesamiento agroindustrial</h3>
+                        <p class="text-slate-400 text-sm mt-2 flex-1">
+                            Pórticos de gran luz con cerramiento termoaislante PIR y soporte para túneles de frío.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-slate-800 font-mono text-xs">
+                            <div>
+                                <span class="text-slate-500 block">ÁREA</span>
+                                <span class="text-white font-bold">2,850 m²</span>
+                            </div>
+                            <div>
+                                <span class="text-slate-500 block">PLAZO</span>
+                                <span class="text-emerald-400 font-bold">48 días</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="bg-obsidian border border-slate-800 rounded-2xl p-6 relative">
-                    <span class="font-mono text-3xl font-bold text-amberGold/30 block mb-3">03</span>
-                    <h3 class="font-display font-bold text-lg text-white">Soldadura Homologada & Granallado</h3>
-                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                        Soldadores calificados 3G/4G/6G bajo <strong>AWS D1.1</strong>. Ensayos no destructivos (tintes penetrantes y ultrasonido) y pintura epóxica controlada por micraje.
-                    </p>
-                </div>
-
-                <div class="bg-obsidian border border-slate-800 rounded-2xl p-6 relative">
-                    <span class="font-mono text-3xl font-bold text-amberGold/30 block mb-3">04</span>
-                    <h3 class="font-display font-bold text-lg text-white">Montaje Seguro & Dossier Final</h3>
-                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                        Maniobras de izaje planificadas con Prevencionista PDR/Ingeniero SSOMA, SCTR completo conforme a Ley 29783 y entrega de Dossier de Calidad As-Built.
-                    </p>
+                <!-- Proyecto grande 2 -->
+                <div class="bg-obsidian border border-slate-800 rounded-2xl overflow-hidden flex flex-col">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Edificio corporativo" class="w-full h-full object-cover brightness-90 hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/111827/F59E0B?text=Edificio+Corporativo'">
+                        <span class="absolute top-3 left-3 bg-obsidian/90 border border-slate-700 text-amberGold font-mono text-[11px] px-2.5 py-1 rounded">
+                            Ate, Lima
+                        </span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col">
+                        <h3 class="font-display font-bold text-lg text-white">Edificio corporativo de 4 niveles</h3>
+                        <p class="text-slate-400 text-sm mt-2 flex-1">
+                            Estructura sismorresistente apernada con losa colaborante y protección contra fuego certificada.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-slate-800 font-mono text-xs">
+                            <div>
+                                <span class="text-slate-500 block">ÁREA</span>
+                                <span class="text-white font-bold">1,420 m²</span>
+                            </div>
+                            <div>
+                                <span class="text-slate-500 block">PLAZO</span>
+                                <span class="text-emerald-400 font-bold">54 días</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ ESTRATÉGICO (Resolución de Objeciones de Gerencia / Propietarios) -->
-    <section id="faq" class="py-20 bg-obsidian border-t border-slate-800/80">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">// RESPUESTAS TRANSPARENTES</span>
-                <h2 class="font-display font-bold text-3xl text-white">Preguntas Frecuentes de Gerencia e Inversionistas</h2>
+    <!-- CÓMO TRABAJAMOS: 4 pasos simples, con opción técnica colapsada -->
+    <section id="proceso" class="py-20 bg-obsidian border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">Cómo trabajamos</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-white text-balance">
+                    Un proceso simple, sin sorpresas
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-3">
+                    El 85% de los sobrecostos vienen de improvisar en obra. Nosotros resolvemos todo antes de montar.
+                </p>
             </div>
 
-            <div class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+                    <div class="w-9 h-9 rounded-lg bg-amberGold/15 border border-amberGold/30 text-amberGold flex items-center justify-center font-mono font-bold text-sm mb-4">01</div>
+                    <h3 class="font-display font-bold text-lg text-white">Conversamos</h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                        Nos cuentas qué necesitas. Sin tecnicismos, sin presión. Si no sabes exactamente, te ayudamos a definirlo.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+                    <div class="w-9 h-9 rounded-lg bg-amberGold/15 border border-amberGold/30 text-amberGold flex items-center justify-center font-mono font-bold text-sm mb-4">02</div>
+                    <h3 class="font-display font-bold text-lg text-white">Diseñamos</h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                        Modelamos tu estructura en 3D con todas las conexiones resueltas. Ahí se detectan los problemas antes de fabricar.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+                    <div class="w-9 h-9 rounded-lg bg-amberGold/15 border border-amberGold/30 text-amberGold flex items-center justify-center font-mono font-bold text-sm mb-4">03</div>
+                    <h3 class="font-display font-bold text-lg text-white">Fabricamos</h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                        Cortamos y soldamos en planta, bajo techo, con acero certificado y soldadores calificados. Sin improvisar en tu terreno.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+                    <div class="w-9 h-9 rounded-lg bg-amberGold/15 border border-amberGold/30 text-amberGold flex items-center justify-center font-mono font-bold text-sm mb-4">04</div>
+                    <h3 class="font-display font-bold text-lg text-white">Montamos</h3>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                        Llevamos la estructura armada a tu obra, la izamos y aseguramos. Recibes tu proyecto con garantía y dossier de calidad.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Detalle técnico colapsado (divulgación progresiva) -->
+            <details class="mt-10 bg-slate-900/50 border border-slate-800 rounded-2xl p-6 group">
+                <summary class="flex items-center justify-between gap-4">
+                    <span class="text-sm font-medium text-slate-300">
+                        <span class="text-amberGold font-mono text-xs uppercase tracking-wider">Ver detalle técnico</span>
+                        <span class="block text-white font-display font-semibold mt-1">Cómo garantizamos la calidad (para ingenieros y proyectistas)</span>
+                    </span>
+                    <svg class="chev w-5 h-5 text-amberGold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="mt-5 pt-5 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-5 text-sm text-slate-300">
+                    <div>
+                        <h4 class="font-display font-semibold text-white mb-1.5">Ingeniería</h4>
+                        <p class="leading-relaxed text-slate-400">Modelado BIM Tekla LOD 400, memoria de cálculo firmada CIP bajo Normas E.020, E.030 y E.090. Dossier de planos As-Built.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-semibold text-white mb-1.5">Acero y soldadura</h4>
+                        <p class="leading-relaxed text-slate-400">Acero ASTM A36 / A572 G50 certificado. Soldadores calificados AWS D1.1 (3G, 4G y 6G). Ensayos no destructivos (END) con ultrasonido y tintes penetrantes.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-semibold text-white mb-1.5">Protección anticorrosiva</h4>
+                        <p class="leading-relaxed text-slate-400">Granallado SSPC-SP6, base epóxica, acabado poliuretano alifático. En zonas costeras se aplica sistema marino C5-M. Galvanizado en caliente por inmersión (ASTM A123).</p>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-semibold text-white mb-1.5">Seguridad y montaje</h4>
+                        <p class="leading-relaxed text-slate-400">Plan de izaje con grúas telescópicas, ingeniero SSOMA en obra, SCTR completo conforme a la Ley 29783. Cero accidentes en 8 años.</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section id="faq" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">Preguntas frecuentes</span>
+                <h2 class="font-display font-bold text-3xl text-white">Lo que suelen preguntarnos</h2>
+            </div>
+
+            <div class="space-y-3">
                 <div class="border border-slate-800 rounded-xl bg-slate-900/40 overflow-hidden">
-                    <button onclick="toggleFaq(0)" class="w-full px-6 py-4 text-left flex items-center justify-between font-display font-semibold text-white hover:text-amberGold transition">
-                        <span>¿Qué tipo y envergadura de proyectos atiende VÉRTICE?</span>
-                        <span id="faq-icon-0" class="font-mono text-amberGold text-xl">+</span>
+                    <button onclick="toggleFaq(0)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-semibold text-white hover:text-amberGold transition">
+                        <span>No tengo planos. ¿Pueden ayudarme igual?</span>
+                        <span id="faq-icon-0" class="font-mono text-amberGold text-xl shrink-0">+</span>
                     </button>
-                    <div id="faq-body-0" class="px-6 pb-5 text-sm text-slate-300 leading-relaxed">
-                        Nos especializamos en proyectos integrales de mediana y gran escala que requieren respaldo de ingeniería formal, memoria de cálculo sismorresistente y fabricación certificada en planta: naves industriales, almacenes logísticos, entrepisos comerciales (mezanines estructurales), coberturas de gran luz y estructuras principales para residencias o edificios de alta especificación.
+                    <div id="faq-body-0" class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed">
+                        Sí. Trabajamos también en modalidad "diseño + construcción": un ingeniero va a tu terreno, toma medidas, escucha lo que necesitas y nosotros desarrollamos el plano y el cálculo. Así optimizamos el acero y reduces el costo total de tu proyecto entre un 12% y 18%.
                     </div>
                 </div>
 
                 <div class="border border-slate-800 rounded-xl bg-slate-900/40 overflow-hidden">
-                    <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left flex items-center justify-between font-display font-semibold text-white hover:text-amberGold transition">
-                        <span>¿Ejecutan proyectos fuera de Lima Metropolitana?</span>
-                        <span id="faq-icon-1" class="font-mono text-amberGold text-xl">+</span>
+                    <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-semibold text-white hover:text-amberGold transition">
+                        <span>¿Cuánto cuesta una estructura metálica?</span>
+                        <span id="faq-icon-1" class="font-mono text-amberGold text-xl shrink-0">+</span>
                     </button>
                     <div id="faq-body-1" class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed">
-                        Sí. El 100% de la fabricación pesada y aplicación de recubrimiento epóxico se realiza en nuestra planta industrial de Lima bajo condiciones controladas. Posteriormente, despachamos los elementos modulados en transporte de carga pesada hacia Arequipa, Trujillo, Piura, Cusco, Ica o cualquier región del país, donde nuestras cuadrillas homologadas realizan el izaje y montaje empernado/soldado en tiempo récord.
+                        Depende del área, la altura y la luz libre. Como referencia, un techo galvanizado simple arranca desde unos S/ 90-150 por m² instalado, mientras que naves industriales o estructuras con cerramiento térmico tienen otra escala. En todos los casos te damos un precio cerrado antes de empezar, sin adicionales después.
                     </div>
                 </div>
 
                 <div class="border border-slate-800 rounded-xl bg-slate-900/40 overflow-hidden">
-                    <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left flex items-center justify-between font-display font-semibold text-white hover:text-amberGold transition">
-                        <span>No cuento aún con planos estructurales, ¿ustedes desarrollan el expediente?</span>
-                        <span id="faq-icon-2" class="font-mono text-amberGold text-xl">+</span>
+                    <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-semibold text-white hover:text-amberGold transition">
+                        <span>¿Atienden fuera de Lima?</span>
+                        <span id="faq-icon-2" class="font-mono text-amberGold text-xl shrink-0">+</span>
                     </button>
                     <div id="faq-body-2" class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed">
-                        Absolutamente. Ejecutamos contratos bajo modalidad <strong>Diseño + Construcción (Design-Build / Llave en Mano)</strong>. Nuestro equipo de ingenieros estructurales colegiados desarrolla el cálculo bajo las normas E.020, E.030 y E.090 del RNE, optimizando las secciones de acero para evitar el sobredimensionamiento innecesario y ahorrar entre un 12% y 18% en el costo global de la estructura.
+                        Sí. Fabricamos toda la estructura en nuestra planta de Lurín (condiciones controladas de calidad) y despachamos a cualquier departamento del Perú. Nuestras cuadrillas viajan para el montaje: Arequipa, Trujillo, Piura, Cusco, Ica, etc.
                     </div>
                 </div>
 
                 <div class="border border-slate-800 rounded-xl bg-slate-900/40 overflow-hidden">
-                    <button onclick="toggleFaq(3)" class="w-full px-6 py-4 text-left flex items-center justify-between font-display font-semibold text-white hover:text-amberGold transition">
-                        <span>¿Qué garantías y respaldos contractuales ofrecen?</span>
-                        <span id="faq-icon-3" class="font-mono text-amberGold text-xl">+</span>
+                    <button onclick="toggleFaq(3)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-semibold text-white hover:text-amberGold transition">
+                        <span>¿Qué garantías me dan?</span>
+                        <span id="faq-icon-3" class="font-mono text-amberGold text-xl shrink-0">+</span>
                     </button>
                     <div id="faq-body-3" class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed">
-                        Trabajamos con contratos de suma alzada o precios unitarios con cronograma vinculante, penalidades por mora a favor del cliente, pólizas CAR / SCTR vigentes y entregamos al cierre el Dossier de Calidad completo: certificados de calidad de colada del acero (Mill Test Certificates), protocolos de torque, ensayos de soldadura (END) y planos As-Built firmados.
+                        Contrato de suma alzada o precio unitario cerrado, cronograma vinculante con penalidad por mora a tu favor, pólizas CAR y SCTR vigentes, y al cierre te entregamos dossier de calidad completo (certificados de acero, protocolos de soldadura, planos As-Built). La garantía estructural es de 15 años por escrito.
+                    </div>
+                </div>
+
+                <div class="border border-slate-800 rounded-xl bg-slate-900/40 overflow-hidden">
+                    <button onclick="toggleFaq(4)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-semibold text-white hover:text-amberGold transition">
+                        <span>¿Cuánto demora una obra?</span>
+                        <span id="faq-icon-4" class="font-mono text-amberGold text-xl shrink-0">+</span>
+                    </button>
+                    <div id="faq-body-4" class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed">
+                        Un techo simple se entrega en 3-5 semanas. Ampliaciones y mezanines entre 5-8 semanas. Naves industriales entre 6 y 12 semanas según tamaño. El cronograma exacto lo defines junto con nuestro ingeniero al inicio.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE CONVERSIÓN Y SOLICITUD DE EVALUACIÓN TÉCNICA -->
-    <section id="evaluacion-tecnica" class="py-20 lg:py-24 bg-gradient-to-b from-slate-950 to-obsidian border-t border-slate-800 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                
-                <!-- Columna Izquierda: Compromiso de Confidencialidad y Proceso de Evaluación (5 cols) -->
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="font-mono text-xs uppercase tracking-widest text-amberGold block">// MESA DE INGENIERÍA & PRESUPUESTOS</span>
-                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white leading-tight">
-                        Solicite una Evaluación Técnica y Presupuesto Detallado de su Proyecto
-                    </h2>
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                        Complete los datos técnicos de su requerimiento. Un Ingeniero Estructural Senior se pondrá en contacto directo para revisar alcances, planos o programar una visita técnica a terreno.
-                    </p>
-
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-8 h-8 rounded-lg bg-amberGold/15 border border-amberGold/40 text-amberGold flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">1</div>
-                            <div>
-                                <h4 class="font-display font-semibold text-white text-sm">Revisión de Viabilidad en 24 Horas</h4>
-                                <p class="text-xs text-slate-400 mt-0.5">Analizamos su metrado, luces libres y condiciones de cimentación o edificio existente.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-8 h-8 rounded-lg bg-amberGold/15 border border-amberGold/40 text-amberGold flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">2</div>
-                            <div>
-                                <h4 class="font-display font-semibold text-white text-sm">Propuesta Técnico-Económica Transparente</h4>
-                                <p class="text-xs text-slate-400 mt-0.5">Partidas desglosadas por ingeniería, suministro de acero, fabricación, pintura epóxica y montaje.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-8 h-8 rounded-lg bg-amberGold/15 border border-amberGold/40 text-amberGold flex items-center justify-center font-mono font-bold text-xs shrink-0 mt-0.5">3</div>
-                            <div>
-                                <h4 class="font-display font-semibold text-white text-sm">Visita a Obra o Reunión con Gerencia</h4>
-                                <p class="text-xs text-slate-400 mt-0.5">Coordinación presencial en su obra o en nuestras oficinas de ingeniería en Lima.</p>
-                            </div>
-                        </div>
+    <!-- AVANZADO: Para quien ya tiene proyecto definido (progressive disclosure) -->
+    <section id="avanzado" class="py-16 bg-obsidian border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <details class="group bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+                <summary class="flex items-center justify-between gap-4">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-1">Para ingenieros y proyectistas</span>
+                        <span class="block font-display font-bold text-white text-lg sm:text-xl">¿Ya tienes planos o especificaciones técnicas? Usa el especificador avanzado</span>
+                        <span class="block text-slate-400 text-sm mt-1">Calcula tonelaje preliminar, plazo estimado y esquema anticorrosivo según tu tipología y ubicación.</span>
                     </div>
+                    <svg class="chev w-6 h-6 text-amberGold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
 
-                    <!-- Tarjeta de Contacto Directo -->
-                    <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 mt-6 space-y-3">
-                        <div class="text-xs font-mono uppercase text-amberGold">Canales Corporativos Directos</div>
-                        <div class="text-sm text-slate-200 flex items-center gap-2.5">
-                            <svg class="w-4 h-4 text-amberGold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            <span>Oficina Técnica: Av. El Derby, Santiago de Surco • Planta: Lurín, Lima</span>
-                        </div>
-                        <div class="text-sm text-slate-200 flex items-center gap-2.5">
-                            <svg class="w-4 h-4 text-amberGold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            <span class="font-mono">ingenieria@verticeestructural.pe</span>
-                        </div>
-                    </div>
-                </div>
+                <div class="mt-8 pt-8 border-t border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-                <!-- Columna Derecha: Formulario de Calificación Implícita de Alto Valor (7 cols) -->
-                <div class="lg:col-span-7 bg-slate-900/90 border border-slate-700/80 rounded-2xl p-6 sm:p-10 shadow-2xl">
-                    <div id="sync-banner" class="hidden mb-6 p-3.5 rounded-xl bg-amberGold/15 border border-amberGold/40 text-xs font-mono text-amberGold flex items-center justify-between">
-                        <span>✓ Parámetros del Especificador Técnico cargados automáticamente.</span>
-                        <span class="underline cursor-pointer" onclick="document.getElementById('sync-banner').classList.add('hidden')">Ocultar</span>
-                    </div>
-
-                    <form id="consultation-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div>
-                                <label for="client-name" class="block text-xs font-mono uppercase text-slate-300 mb-2">Nombre y Apellido *</label>
-                                <input type="text" id="client-name" required placeholder="Ej. Ing. Carlos Mendoza" class="w-full bg-obsidian border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
-                            </div>
-                            <div>
-                                <label for="client-company" class="block text-xs font-mono uppercase text-slate-300 mb-2">Empresa / Razón Social o Inversionista *</label>
-                                <input type="text" id="client-company" required placeholder="Ej. Grupo Logístico del Sur S.A.C." class="w-full bg-obsidian border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div>
-                                <label for="client-phone" class="block text-xs font-mono uppercase text-slate-300 mb-2">Teléfono / WhatsApp Corporativo *</label>
-                                <input type="tel" id="client-phone" required placeholder="+51 999 888 777" class="w-full bg-obsidian border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
-                            </div>
-                            <div>
-                                <label for="client-email" class="block text-xs font-mono uppercase text-slate-300 mb-2">Correo Electrónico *</label>
-                                <input type="email" id="client-email" required placeholder="cmendoza@empresa.pe" class="w-full bg-obsidian border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
-                            </div>
-                        </div>
-
-                        <!-- Selectores que filtran naturalmente proyectos de envergadura sin mencionar precios mínimos -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-1">
-                            <div>
-                                <label for="form-project-type" class="block text-xs font-mono uppercase text-slate-300 mb-2">Tipo de Estructura Requerida *</label>
-                                <select id="form-project-type" required class="w-full bg-obsidian border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amberGold">
-                                    <option value="nave">Nave Industrial / Almacén Logístico / Planta</option>
-                                    <option value="comercial">Edificación Comercial / Mezanine Estructural</option>
-                                    <option value="arquitectonica">Residencia de Alta Gama / Estructura Arquitectónica</option>
-                                    <option value="cobertura">Cobertura de Gran Luz / Polideportivo / Institucional</option>
-                                    <option value="especial">Soporte de Equipos / Puente Grúa / Obra Especial</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="form-project-area" class="block text-xs font-mono uppercase text-slate-300 mb-2">Área o Envergadura Aproximada *</label>
-                                <select id="form-project-area" required class="w-full bg-obsidian border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amberGold">
-                                    <option value="150-500">120 m² a 450 m² (Estructura Integral)</option>
-                                    <option value="500-1500" selected>450 m² a 1,500 m² (Mediana / Gran Luz)</option>
-                                    <option value="1500-3500">1,500 m² a 3,500 m² (Complejo Industrial)</option>
-                                    <option value="3500+">Más de 3,500 m² (Planta / Megaproyecto)</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                            <div>
-                                <label for="form-location" class="block text-xs font-mono uppercase text-slate-300 mb-2">Ubicación de la Obra *</label>
-                                <input type="text" id="form-location" required placeholder="Ej. Lurín, Callao, Arequipa, Trujillo..." class="w-full bg-obsidian border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
-                            </div>
-                            <div>
-                                <label for="form-timeline" class="block text-xs font-mono uppercase text-slate-300 mb-2">Horizonte de Inicio de Ejecución *</label>
-                                <select id="form-timeline" required class="w-full bg-obsidian border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amberGold">
-                                    <option value="inmediato">Inmediato (Proyecto aprobado para contratar)</option>
-                                    <option value="30-60">Próximos 30 a 60 días (En cierre de ingeniería)</option>
-                                    <option value="trimestre">Próximo trimestre (Evaluación de factibilidad)</option>
-                                </select>
+                    <div class="lg:col-span-7 bg-obsidian/95 border border-slate-800 rounded-2xl p-6 space-y-6">
+                        <div>
+                            <label class="flex items-center justify-between text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
+                                <span>01. Tipología</span>
+                            </label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="type-selector">
+                                <button type="button" data-type="nave" class="cfg-type-btn text-left p-3 rounded-lg border-2 border-amberGold bg-amberGold/10 transition flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded bg-amberGold text-obsidian font-mono font-bold text-xs flex items-center justify-center shrink-0">A</span>
+                                    <span class="font-display font-semibold text-xs text-white">Nave / Almacén</span>
+                                </button>
+                                <button type="button" data-type="comercial" class="cfg-type-btn text-left p-3 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs flex items-center justify-center shrink-0">B</span>
+                                    <span class="font-display font-semibold text-xs text-white">Mezanine / Edificación</span>
+                                </button>
+                                <button type="button" data-type="arquitectonica" class="cfg-type-btn text-left p-3 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs flex items-center justify-center shrink-0">C</span>
+                                    <span class="font-display font-semibold text-xs text-white">Arquitectura AESS</span>
+                                </button>
+                                <button type="button" data-type="cobertura" class="cfg-type-btn text-left p-3 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-center gap-2">
+                                    <span class="w-6 h-6 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs flex items-center justify-center shrink-0">D</span>
+                                    <span class="font-display font-semibold text-xs text-white">Cobertura Gran Luz</span>
+                                </button>
                             </div>
                         </div>
 
                         <div>
-                            <label for="form-details" class="block text-xs font-mono uppercase text-slate-300 mb-2">Especificaciones Adicionales o Alcance del Proyecto</label>
-                            <textarea id="form-details" rows="3" placeholder="Indique si ya dispone de planos en AutoCAD/Revit, altura libre requerida, sobrecarga o cualquier requerimiento especial..." class="w-full bg-obsidian border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold"></textarea>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">02. Área estimada (m²)</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="area-selector">
+                                <button type="button" data-area="150-500" class="cfg-area-btn p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition">
+                                    <div class="font-mono font-bold text-xs text-white">120–450</div>
+                                    <div class="text-[10px] text-slate-400 mt-0.5">Media</div>
+                                </button>
+                                <button type="button" data-area="500-1500" class="cfg-area-btn p-2.5 rounded-lg border-2 border-amberGold bg-amberGold/10 text-center transition">
+                                    <div class="font-mono font-bold text-xs text-white">450–1,500</div>
+                                    <div class="text-[10px] text-amberGold mt-0.5">Frecuente</div>
+                                </button>
+                                <button type="button" data-area="1500-3500" class="cfg-area-btn p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition">
+                                    <div class="font-mono font-bold text-xs text-white">1,500–3,500</div>
+                                    <div class="text-[10px] text-slate-400 mt-0.5">Gran luz</div>
+                                </button>
+                                <button type="button" data-area="3500+" class="cfg-area-btn p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition">
+                                    <div class="font-mono font-bold text-xs text-white">+3,500</div>
+                                    <div class="text-[10px] text-slate-400 mt-0.5">Planta</div>
+                                </button>
+                            </div>
                         </div>
 
-                        <button type="submit" class="w-full bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-base py-4 px-6 rounded-xl cta-glow flex items-center justify-center gap-3">
-                            <span>Enviar Expediente / Solicitar Evaluación Técnica</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </button>
-
-                        <p class="text-[11px] text-slate-400 text-center font-mono">
-                            🔒 Información protegida bajo acuerdo de confidencialidad corporativa (NDA).
-                        </p>
-                    </form>
-
-                    <!-- Estado de Confirmación post-envío -->
-                    <div id="form-success" class="hidden py-10 text-center space-y-4">
-                        <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label for="cfg-zone" class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">03. Zona geográfica</label>
+                                <select id="cfg-zone" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-white focus:outline-none focus:border-amberGold">
+                                    <option value="costa">Lima / Costa (Zona Sísmica 4)</option>
+                                    <option value="costa_marina">Litoral &lt; 2km (Salinidad C5-M)</option>
+                                    <option value="sierra">Sierra (Viento, granizo, altura)</option>
+                                    <option value="norte_selva">Norte / Selva (Lluvia intensa)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="cfg-stage" class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">04. Estado del proyecto</label>
+                                <select id="cfg-stage" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-white focus:outline-none focus:border-amberGold">
+                                    <option value="expediente">Con planos / expediente</option>
+                                    <option value="arquitectura">Solo arquitectura</option>
+                                    <option value="terreno">Solo terreno</option>
+                                </select>
+                            </div>
                         </div>
-                        <span class="font-mono text-xs uppercase text-amberGold tracking-widest block">SOLICITUD REGISTRADA EN MESA DE INGENIERÍA</span>
-                        <h3 class="font-display font-bold text-2xl text-white">Hemos recibido los parámetros de su proyecto</h3>
-                        <p class="text-slate-300 text-sm max-w-md mx-auto leading-relaxed">
-                            Su código de expediente preliminar es <span id="ticket-code" class="font-mono font-bold text-amberGold">VRT-2026-894</span>. Un Ingeniero Estructural Senior se comunicará con usted dentro de las próximas horas hábiles para coordinar la revisión técnica.
-                        </p>
-                        <button type="button" onclick="resetConsultationForm()" class="mt-4 px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 transition">
-                            Realizar otra consulta técnica
+                    </div>
+
+                    <div class="lg:col-span-5 bg-gradient-to-b from-slate-900 to-obsidian border border-amberGold/40 rounded-2xl p-5">
+                        <div class="border-b border-slate-800 pb-3 mb-4">
+                            <span class="font-mono text-[10px] uppercase text-amberGold tracking-wider block">Pre-especificación</span>
+                            <h3 id="spec-title" class="font-display font-bold text-base text-white mt-0.5">Nave Industrial</h3>
+                        </div>
+
+                        <div class="space-y-2.5 font-mono text-xs">
+                            <div class="bg-slate-950/90 border border-slate-800 rounded-lg p-2.5">
+                                <span class="text-slate-400 block text-[10px] uppercase">Sistema</span>
+                                <span id="spec-system" class="text-white block mt-1 text-xs leading-relaxed">Pórticos rígidos ASTM A572 G50 + arriostres.</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="bg-slate-950/90 border border-slate-800 rounded-lg p-2.5">
+                                    <span class="text-slate-400 block text-[10px] uppercase">Tonelaje</span>
+                                    <span id="spec-tonnage" class="text-amberGold font-bold text-sm block mt-1">18–48 TN</span>
+                                </div>
+                                <div class="bg-slate-950/90 border border-slate-800 rounded-lg p-2.5">
+                                    <span class="text-slate-400 block text-[10px] uppercase">Plazo</span>
+                                    <span id="spec-timeline" class="text-emerald-400 font-bold text-sm block mt-1">5–8 sem</span>
+                                </div>
+                            </div>
+                            <div class="bg-slate-950/90 border border-slate-800 rounded-lg p-2.5">
+                                <span class="text-slate-400 block text-[10px] uppercase">Anticorrosivo</span>
+                                <span id="spec-coating" class="text-slate-200 block mt-1 text-xs leading-relaxed">SSPC-SP6 + epóxico + poliuretano.</span>
+                            </div>
+                        </div>
+
+                        <button type="button" onclick="transferSpecsToForm()" class="mt-4 w-full bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-xs py-3 px-4 rounded-lg cta-glow flex items-center justify-center gap-2">
+                            <span>Enviar parámetros al formulario</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </button>
                     </div>
                 </div>
+            </details>
+        </div>
+    </section>
 
+    <!-- FORMULARIO PRINCIPAL SIMPLIFICADO -->
+    <section id="cotizar" class="py-20 lg:py-24 bg-gradient-to-b from-slate-950 to-obsidian border-t border-slate-800 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">Cotiza tu proyecto</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-white text-balance">
+                    Cuéntanos qué necesitas construir
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-3">
+                    No necesitas planos ni saber de normas. En 24 horas un ingeniero te llama para orientarte y darte un presupuesto.
+                </p>
+            </div>
+
+            <div class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <div id="sync-banner" class="hidden mb-6 p-3 rounded-lg bg-amberGold/15 border border-amberGold/40 text-xs font-mono text-amberGold">
+                    ✓ Parámetros técnicos cargados automáticamente. Solo completa tus datos.
+                </div>
+
+                <form id="consultation-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="client-name" class="block text-xs font-mono uppercase text-slate-300 mb-2">Tu nombre *</label>
+                            <input type="text" id="client-name" required placeholder="Ej. Carlos Mendoza" class="w-full bg-obsidian border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
+                        </div>
+                        <div>
+                            <label for="client-phone" class="block text-xs font-mono uppercase text-slate-300 mb-2">WhatsApp o teléfono *</label>
+                            <input type="tel" id="client-phone" required placeholder="+51 999 888 777" class="w-full bg-obsidian border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="form-need" class="block text-xs font-mono uppercase text-slate-300 mb-2">¿Qué necesitas construir? *</label>
+                        <textarea id="form-need" required rows="3" placeholder="Ej: Quiero cubrir el patio de mi taller con estructura galvanizada, son unos 120 m². No tengo planos todavía." class="w-full bg-obsidian border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold"></textarea>
+                        <p class="text-[11px] text-slate-500 mt-1.5">Con un croquis, una idea o un audio por WhatsApp nos basta para empezar.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="form-location" class="block text-xs font-mono uppercase text-slate-300 mb-2">¿Dónde está la obra? *</label>
+                            <input type="text" id="form-location" required placeholder="Ej. Villa El Salvador, Lima" class="w-full bg-obsidian border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
+                        </div>
+                        <div>
+                            <label for="client-email" class="block text-xs font-mono uppercase text-slate-300 mb-2">Correo (opcional)</label>
+                            <input type="email" id="client-email" placeholder="tucorreo@empresa.pe" class="w-full bg-obsidian border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
+                        </div>
+                    </div>
+
+                    <!-- Hidden inputs para capturar el preset si viene del configurador avanzado -->
+                    <input type="hidden" id="form-project-type" value="nave">
+                    <input type="hidden" id="form-project-area" value="500-1500">
+
+                    <button type="submit" class="w-full bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-base py-4 px-6 rounded-xl cta-glow flex items-center justify-center gap-3">
+                        <span>Enviar y recibir orientación gratis</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </button>
+
+                    <p class="text-[11px] text-slate-400 text-center">
+                        🔒 Tu información queda bajo confidencialidad. No te vamos a llamar para venderte otra cosa.
+                    </p>
+                </form>
+
+                <div id="form-success" class="hidden py-10 text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <span class="font-mono text-xs uppercase text-amberGold tracking-widest block">Solicitud recibida</span>
+                    <h3 class="font-display font-bold text-2xl text-white">Gracias, te contactamos pronto</h3>
+                    <p class="text-slate-300 text-sm max-w-md mx-auto leading-relaxed">
+                        Tu código de referencia es <span id="ticket-code" class="font-mono font-bold text-amberGold">VRT-2026-894</span>. Un ingeniero te llamará en las próximas horas hábiles para conversar sobre tu proyecto.
+                    </p>
+                    <button type="button" onclick="resetConsultationForm()" class="mt-4 px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 transition">
+                        Enviar otra consulta
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contacto directo alternativo -->
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="https://wa.me/51999888777" target="_blank" rel="noopener" class="bg-slate-900/60 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-4 flex items-center gap-3 transition group">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0">
+                        <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </div>
+                    <div>
+                        <div class="text-xs font-mono uppercase text-emerald-400">WhatsApp directo</div>
+                        <div class="text-sm font-semibold text-white group-hover:text-emerald-300 transition">Escríbenos ahora</div>
+                    </div>
+                </a>
+                <a href="tel:+5117000000" class="bg-slate-900/60 border border-slate-800 hover:border-amberGold/50 rounded-xl p-4 flex items-center gap-3 transition group">
+                    <div class="w-10 h-10 rounded-lg bg-amberGold/15 border border-amberGold/30 flex items-center justify-center shrink-0">
+                        <svg class="w-5 h-5 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    </div>
+                    <div>
+                        <div class="text-xs font-mono uppercase text-amberGold">Llámanos</div>
+                        <div class="text-sm font-semibold text-white group-hover:text-amber-300 transition">(01) 700-0000</div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER CORPORATIVO -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-12 text-xs text-slate-500">
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-10 text-xs text-slate-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-3">
                 <div class="w-8 h-8 rounded bg-amberGold flex items-center justify-center text-obsidian font-display font-bold">V</div>
                 <div>
-                    <span class="font-display font-bold text-slate-200 block">VÉRTICE INGENIERÍA METÁLICA S.A.C.</span>
-                    <span class="font-mono text-[11px]">RUC 20609481721 • Lima, Perú • Norma E.090 / AWS D1.1</span>
+                    <span class="font-display font-bold text-slate-200 block">VÉRTICE ESTRUCTURAS METÁLICAS S.A.C.</span>
+                    <span class="font-mono text-[11px]">RUC 20609481721 · Lima, Perú</span>
                 </div>
             </div>
-            <div class="flex flex-wrap gap-6 text-slate-400">
-                <a href="#soluciones" class="hover:text-amberGold transition">Especialidades</a>
-                <a href="#configurador" class="hover:text-amberGold transition">Especificador BIM</a>
-                <a href="#portafolio" class="hover:text-amberGold transition">Obras</a>
-                <a href="#evaluacion-tecnica" class="hover:text-amberGold transition">Contacto de Ingeniería</a>
+            <div class="flex flex-wrap gap-6 text-slate-400 justify-center">
+                <a href="#ayudamos" class="hover:text-amberGold transition">Servicios</a>
+                <a href="#proyectos" class="hover:text-amberGold transition">Proyectos</a>
+                <a href="#proceso" class="hover:text-amberGold transition">Proceso</a>
+                <a href="#cotizar" class="hover:text-amberGold transition">Cotizar</a>
             </div>
             <div class="font-mono text-[11px] text-slate-500">
                 © 2026 VÉRTICE. Todos los derechos reservados.
@@ -1026,9 +829,8 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT: Lógica del Configurador, Filtros, Acordeón y Sincronización de Formulario -->
     <script>
-        // Estado actual del Especificador Técnico Interactivo
+        // ===== Estado del configurador avanzado =====
         const currentConfig = {
             type: 'nave',
             area: '500-1500',
@@ -1036,187 +838,121 @@
             stage: 'expediente'
         };
 
-        // Base de conocimiento de ingeniería para retroalimentación inmediata (Dopamina / Autoridad)
         const specDatabase = {
             nave: {
                 label: 'Nave Industrial / Almacén',
-                system: 'Pórticos rígidos de alma llena o celosía en acero ASTM A572 G50 + Arriostres de techo y columnas.',
-                deliverables: 'Memoria de cálculo E.090 firmada CIP, Modelado BIM Tekla LOD 400, Planos de fabricación y Dossier AWS D1.1.'
+                system: 'Pórticos rígidos ASTM A572 G50 + arriostres de techo.'
             },
             comercial: {
-                label: 'Edificación / Mezanine Comercial',
-                system: 'Vigas principales y secundarias W/I en acero ASTM A572 G50 + Placa colaborante Steel Deck y conectores Nelson Stud.',
-                deliverables: 'Análisis dinámico modal espectral E.030, Ingeniería de conexiones apernadas, Protección ignífuga y Dossier de Calidad.'
+                label: 'Mezanine / Edificación Comercial',
+                system: 'Vigas W + placa colaborante Steel Deck con conectores Nelson Stud.'
             },
             arquitectonica: {
-                label: 'Arquitectura de Alta Gama / AESS',
-                system: 'Estructura expuesta AESS en perfiles tubulares estructurales ASTM A500 y vigas de gran voladizo con soldadura al ras.',
-                deliverables: 'Compatibilización arquitectónica BIM 3D, Cálculo sismorresistente para geometrías complejas y Acabado epóxico/poliuretano de alta estética.'
+                label: 'Arquitectura AESS',
+                system: 'Perfiles tubulares ASTM A500 con soldadura al ras, acabado estético.'
             },
             cobertura: {
-                label: 'Cobertura de Gran Luz / Institucional',
-                system: 'Arcos parabólicos o tijerales espaciales de gran luz libre con cobertura en Aluzinc TR4 o Termopanel acústico.',
-                deliverables: 'Memoria de cálculo de cargas de viento/sismo (E.020/E.090), Plan de izaje seguro con grúas telescópicas y Garantía estructural.'
+                label: 'Cobertura de Gran Luz',
+                system: 'Arcos o tijerales espaciales con cobertura Aluzinc TR4 / termopanel.'
             }
         };
 
         const areaMetrics = {
-            '150-500': {
-                label: '120 – 450 m²',
-                tonnage: '8 a 18 TN Acero',
-                timeline: '3 a 5 Semanas'
-            },
-            '500-1500': {
-                label: '450 – 1,500 m²',
-                tonnage: '18 a 52 TN Acero',
-                timeline: '5 a 8 Semanas'
-            },
-            '1500-3500': {
-                label: '1,500 – 3,500 m²',
-                tonnage: '55 a 130 TN Acero',
-                timeline: '8 a 11 Semanas'
-            },
-            '3500+': {
-                label: '+3,500 m²',
-                tonnage: '+140 TN Acero',
-                timeline: 'Cronograma por Fases'
-            }
+            '150-500':    { label: '120–450 m²',     tonnage: '8–18 TN',   timeline: '3–5 sem' },
+            '500-1500':   { label: '450–1,500 m²',   tonnage: '18–52 TN',  timeline: '5–8 sem' },
+            '1500-3500':  { label: '1,500–3,500 m²', tonnage: '55–130 TN', timeline: '8–11 sem' },
+            '3500+':      { label: '+3,500 m²',      tonnage: '+140 TN',   timeline: 'Por fases' }
         };
 
         const zoneCoatings = {
-            costa: 'Granallado comercial SSPC-SP6 + Base Epóxica Poliamida + Acabado Poliuretano Alifático (Zona Sísmica 4).',
-            costa_marina: 'Granallado al metal casi blanco SSPC-SP10 + Rico en Zinc + Epóxico Alto Sólidos + Poliuretano C5-M Marino.',
-            sierra: 'Granallado SSPC-SP6 + Epóxico Anticorrosivo + Diseño con sobrecarga de nieve/granizo y viento según Norma E.020.',
-            norte_selva: 'Granallado SSPC-SP6 + Sistema Epóxico Impermeable + Pendientes y canaletas sobredimensionadas para drenaje pluvial intenso.'
+            costa:         'SSPC-SP6 + epóxico + poliuretano alifático.',
+            costa_marina:  'SSPC-SP10 + zinc + epóxico + poliuretano C5-M marino.',
+            sierra:        'SSPC-SP6 + epóxico + sobrecarga de viento/granizo.',
+            norte_selva:   'SSPC-SP6 + epóxico impermeable + drenaje reforzado.'
         };
 
-        // Actualizar tarjeta de diagnóstico técnico
         function updateConfiguratorUI() {
             const typeInfo = specDatabase[currentConfig.type];
             const areaInfo = areaMetrics[currentConfig.area];
-            const coatingInfo = zoneCoatings[currentConfig.zone];
+            const coating = zoneCoatings[currentConfig.zone];
 
-            document.getElementById('spec-title').textContent = `${typeInfo.label} (${areaInfo.label})`;
+            document.getElementById('spec-title').textContent = typeInfo.label;
             document.getElementById('spec-system').textContent = typeInfo.system;
             document.getElementById('spec-tonnage').textContent = areaInfo.tonnage;
             document.getElementById('spec-timeline').textContent = areaInfo.timeline;
-            document.getElementById('spec-coating').textContent = coatingInfo;
-            document.getElementById('spec-deliverables').textContent = typeInfo.deliverables;
+            document.getElementById('spec-coating').textContent = coating;
 
-            // Actualizar estilos visuales de botones de tipo
             document.querySelectorAll('.cfg-type-btn').forEach(btn => {
-                const isSelected = btn.getAttribute('data-type') === currentConfig.type;
-                btn.className = isSelected
-                    ? 'cfg-type-btn text-left p-4 rounded-xl border-2 border-amberGold bg-amberGold/10 transition flex items-start gap-3'
-                    : 'cfg-type-btn text-left p-4 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-start gap-3';
-                const badge = btn.querySelector('div:first-child');
-                if (badge) {
-                    badge.className = isSelected
-                        ? 'w-8 h-8 rounded-lg bg-amberGold text-obsidian font-mono font-bold flex items-center justify-center shrink-0 mt-0.5'
-                        : 'w-8 h-8 rounded-lg bg-slate-800 text-slate-300 font-mono font-bold flex items-center justify-center shrink-0 mt-0.5';
-                }
+                const sel = btn.getAttribute('data-type') === currentConfig.type;
+                btn.className = sel
+                    ? 'cfg-type-btn text-left p-3 rounded-lg border-2 border-amberGold bg-amberGold/10 transition flex items-center gap-2'
+                    : 'cfg-type-btn text-left p-3 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-center gap-2';
+                const badge = btn.querySelector('span:first-child');
+                if (badge) badge.className = sel
+                    ? 'w-6 h-6 rounded bg-amberGold text-obsidian font-mono font-bold text-xs flex items-center justify-center shrink-0'
+                    : 'w-6 h-6 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs flex items-center justify-center shrink-0';
             });
 
-            // Actualizar estilos visuales de botones de área
             document.querySelectorAll('.cfg-area-btn').forEach(btn => {
-                const isSelected = btn.getAttribute('data-area') === currentConfig.area;
-                btn.className = isSelected
-                    ? 'cfg-area-btn p-3.5 rounded-xl border-2 border-amberGold bg-amberGold/10 text-center transition'
-                    : 'cfg-area-btn p-3.5 rounded-xl border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition';
+                const sel = btn.getAttribute('data-area') === currentConfig.area;
+                btn.className = sel
+                    ? 'cfg-area-btn p-2.5 rounded-lg border-2 border-amberGold bg-amberGold/10 text-center transition'
+                    : 'cfg-area-btn p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition';
             });
         }
 
-        // Eventos para selectores del configurador
         document.querySelectorAll('.cfg-type-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 currentConfig.type = btn.getAttribute('data-type');
                 updateConfiguratorUI();
             });
         });
-
         document.querySelectorAll('.cfg-area-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 currentConfig.area = btn.getAttribute('data-area');
                 updateConfiguratorUI();
             });
         });
-
-        document.getElementById('cfg-zone').addEventListener('change', (e) => {
+        document.getElementById('cfg-zone').addEventListener('change', e => {
             currentConfig.zone = e.target.value;
             updateConfiguratorUI();
         });
-
-        document.getElementById('cfg-stage').addEventListener('change', (e) => {
+        document.getElementById('cfg-stage').addEventListener('change', e => {
             currentConfig.stage = e.target.value;
-            updateConfiguratorUI();
         });
 
-        // Pre-seleccionar desde las tarjetas de Especialidades
-        function selectConfiguratorPreset(type, area) {
-            currentConfig.type = type;
-            currentConfig.area = area;
-            updateConfiguratorUI();
-            document.getElementById('configurador').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Transferir especificaciones configuradas al formulario de contacto
         function transferSpecsToForm() {
             document.getElementById('form-project-type').value = currentConfig.type;
             document.getElementById('form-project-area').value = currentConfig.area;
-            
-            const zoneText = document.getElementById('cfg-zone').options[document.getElementById('cfg-zone').selectedIndex].text;
-            const stageText = document.getElementById('cfg-stage').options[document.getElementById('cfg-stage').selectedIndex].text;
-            
-            document.getElementById('form-details').value = `[Pre-especificación BIM]: ${specDatabase[currentConfig.type].label} | Escala: ${areaMetrics[currentConfig.area].label} | Zona: ${zoneText} | Estado: ${stageText}.`;
-            
+            const needField = document.getElementById('form-need');
+            if (!needField.value.trim()) {
+                const typeLabel = specDatabase[currentConfig.type].label;
+                const areaLabel = areaMetrics[currentConfig.area].label;
+                needField.value = `Proyecto de tipo ${typeLabel}, escala ${areaLabel}.`;
+            }
             document.getElementById('sync-banner').classList.remove('hidden');
-            document.getElementById('evaluacion-tecnica').scrollIntoView({ behavior: 'smooth' });
-            setTimeout(() => {
-                document.getElementById('client-name').focus();
-            }, 600);
+            document.getElementById('cotizar').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => document.getElementById('client-name').focus(), 600);
         }
 
-        // Filtro interactivo de Portafolio de Obras
-        function filterProjects(category) {
-            document.querySelectorAll('.proj-filter-btn').forEach(btn => {
-                const active = btn.getAttribute('data-filter') === category;
-                btn.className = active
-                    ? 'proj-filter-btn active px-4 py-2 rounded-lg font-mono text-xs bg-amberGold text-obsidian font-bold transition'
-                    : 'proj-filter-btn px-4 py-2 rounded-lg font-mono text-xs bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700 transition';
-            });
-
-            document.querySelectorAll('.project-card').forEach(card => {
-                if (category === 'todos' || card.getAttribute('data-category') === category) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        }
-
-        // Acordeón de Preguntas Frecuentes
+        // ===== Acordeón FAQ =====
         function toggleFaq(index) {
             const body = document.getElementById(`faq-body-${index}`);
             const icon = document.getElementById(`faq-icon-${index}`);
-            const isHidden = body.classList.contains('hidden');
-            
-            if (isHidden) {
-                body.classList.remove('hidden');
-                icon.textContent = '−';
-            } else {
-                body.classList.add('hidden');
-                icon.textContent = '+';
-            }
+            const open = body.classList.contains('hidden');
+            body.classList.toggle('hidden');
+            icon.textContent = open ? '−' : '+';
         }
 
-        // Envío simulado del Formulario de Evaluación Técnica
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const randomTicket = 'VRT-2026-' + Math.floor(100 + Math.random() * 900);
-            document.getElementById('ticket-code').textContent = randomTicket;
+        // ===== Envío del formulario =====
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const ticket = 'VRT-2026-' + Math.floor(100 + Math.random() * 900);
+            document.getElementById('ticket-code').textContent = ticket;
             document.getElementById('consultation-form').classList.add('hidden');
             document.getElementById('sync-banner').classList.add('hidden');
             document.getElementById('form-success').classList.remove('hidden');
+            document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         function resetConsultationForm() {
@@ -1225,26 +961,19 @@
             document.getElementById('consultation-form').classList.remove('hidden');
         }
 
-        // Menú Móvil
+        // ===== Menú móvil =====
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const iconOpen = document.getElementById('menu-icon-open');
         const iconClose = document.getElementById('menu-icon-close');
 
         mobileBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            if (isHidden) {
-                mobileMenu.classList.remove('hidden');
-                iconOpen.classList.add('hidden');
-                iconClose.classList.remove('hidden');
-            } else {
-                mobileMenu.classList.add('hidden');
-                iconOpen.classList.remove('hidden');
-                iconClose.classList.add('hidden');
-            }
+            const hidden = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
         });
 
-        // Cerrar menú móvil al hacer clic en un enlace
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
@@ -1252,6 +981,13 @@
                 iconClose.classList.add('hidden');
             });
         });
+
+        // Abrir automáticamente el disclosure avanzado si el usuario llega con #avanzado
+        if (window.location.hash === '#avanzado') {
+            document.querySelector('#avanzado details')?.setAttribute('open', '');
+        }
+
+        updateConfiguratorUI();
     </script>
 </body>
 </html>
