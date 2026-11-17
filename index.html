@@ -1,993 +1,742 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VÉRTICE | Estructuras Metálicas y Galvanizadas en Perú — Cotiza tu Proyecto</title>
-    <meta name="description" content="Diseñamos, fabricamos y montamos estructuras metálicas y galvanizadas para talleres, viviendas, almacenes y naves industriales en todo el Perú. Cotización sin compromiso en 24 horas.">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Luis Sullca Condore — Desarrollador Backend especializado en .NET, Java y bases de datos relacionales. Casos de estudio de arquitectura y decisiones técnicas.">
+  <title>Luis Sullca Condore | Backend Developer · .NET & SQL</title>
+  <style>
+    /* ==========================================================================
+       1. VARIABLES Y ESTÁNDARES WCAG (Modo claro/oscuro automático)
+       ========================================================================== */
+    :root {
+      --bg-page: #f8fafc;
+      --bg-sheet: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #475569;
+      --accent: #1e3a8a;
+      --accent-soft: rgba(30, 58, 138, 0.06);
+      --accent-border: rgba(30, 58, 138, 0.25);
+      --border-rule: #cbd5e1;
+      --border-soft: #e2e8f0;
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+    }
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        obsidian: '#090D16',
-                        slateDark: '#111827',
-                        steel: '#1E293B',
-                        amberGold: '#F59E0B',
-                        amberHover: '#D97706',
-                    }
-                }
-            }
-        }
-    </script>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-page: #0b1120;
+        --bg-sheet: #0f172a;
+        --bg-subtle: #1e293b;
+        --text-primary: #e2e8f0;
+        --text-secondary: #cbd5e1;
+        --text-muted: #94a3b8;
+        --accent: #93c5fd;
+        --accent-soft: rgba(147, 197, 253, 0.08);
+        --accent-border: rgba(147, 197, 253, 0.3);
+        --border-rule: #1e293b;
+        --border-soft: #1e293b;
+      }
+    }
 
-    <style>
-        .bg-blueprint {
-            background-color: #090D16;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        .cta-glow {
-            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.45);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .cta-glow:hover {
-            box-shadow: 0 0 35px 0px rgba(245, 158, 11, 0.65);
-            transform: translateY(-2px);
-        }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #090D16; }
-        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* Estilos para el disclosure progresivo */
-        details > summary {
-            list-style: none;
-            cursor: pointer;
-        }
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
-        details[open] .chev {
-            transform: rotate(180deg);
-        }
-        .chev {
-            transition: transform 0.25s ease;
-        }
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 2.5rem 1rem;
+    }
 
-        /* Fuentes suaves para textos largos */
-        .text-balance { text-wrap: balance; }
-    </style>
+    main.portfolio-container {
+      max-width: 780px;
+      margin: 0 auto;
+      background-color: var(--bg-sheet);
+      padding: 3rem 3.5rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    }
+
+    /* ==========================================================================
+       2. CABECERA / HERO
+       ========================================================================== */
+    header.hero {
+      border-bottom: 2px solid var(--text-primary);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h1.hero-name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--text-primary);
+    }
+
+    p.hero-role {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 0.3rem;
+    }
+
+    p.hero-tagline {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-top: 0.65rem;
+      max-width: 65ch;
+    }
+
+    ul.contact-bar {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.25rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    ul.contact-bar a {
+      color: var(--text-primary);
+      text-decoration: none;
+      background-image: linear-gradient(var(--accent), var(--accent));
+      background-size: 0% 1.5px;
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      transition: background-size 160ms ease, color 160ms ease;
+    }
+
+    ul.contact-bar a:hover,
+    ul.contact-bar a:focus-visible {
+      color: var(--accent);
+      background-size: 100% 1.5px;
+    }
+
+    /* ==========================================================================
+       3. SECCIONES Y TÍTULOS
+       ========================================================================== */
+    section.portfolio-section {
+      margin-bottom: 2.25rem;
+    }
+
+    h2.section-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border-rule);
+      padding-bottom: 0.35rem;
+      margin-bottom: 1rem;
+    }
+
+    p.about-text {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      max-width: 70ch;
+    }
+
+    p.about-text + p.about-text {
+      margin-top: 0.7rem;
+    }
+
+    /* ==========================================================================
+       4. PROYECTOS COMO CASOS DE ESTUDIO
+       ========================================================================== */
+    article.project {
+      padding: 1.5rem 0 1.75rem 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    article.project:first-of-type {
+      padding-top: 0;
+    }
+
+    article.project:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    h3.project-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    span.project-year {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
+      font-family: var(--font-mono);
+    }
+
+    p.project-subtitle {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    p.tech-line {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding: 0.35rem 0.6rem;
+      background: var(--accent-soft);
+      border-radius: var(--radius-sm);
+      border-left: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .project-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    p.project-problem {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      max-width: 68ch;
+    }
+
+    ul.decisions {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1.1rem;
+    }
+
+    ul.decisions li {
+      position: relative;
+      padding-left: 1.1rem;
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.45rem;
+      max-width: 68ch;
+    }
+
+    ul.decisions li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    ul.decisions li strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* Diagrama de arquitectura con cajas y flechas */
+    .arch-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 1rem 0.85rem;
+      background: var(--bg-subtle);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      margin: 0.9rem 0 1rem 0;
+    }
+
+    .arch-node {
+      flex: 1 1 auto;
+      min-width: 90px;
+      background: var(--bg-sheet);
+      border: 1px solid var(--border-rule);
+      border-radius: var(--radius-sm);
+      padding: 0.45rem 0.55rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-align: center;
+      color: var(--text-primary);
+      line-height: 1.35;
+    }
+
+    .arch-node.accent {
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+      background: var(--accent-soft);
+    }
+
+    .arch-arrow {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      flex: 0 0 auto;
+      font-weight: 600;
+    }
+
+    .arch-caption {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 0.3rem;
+      text-align: center;
+    }
+
+    p.project-result {
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      padding: 0.7rem 0.9rem;
+      background: var(--accent-soft);
+      border-radius: var(--radius-md);
+      border-left: 3px solid var(--accent);
+      max-width: 68ch;
+    }
+
+    p.project-result strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* Otros proyectos (lista compacta) */
+    ul.other-projects {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+    }
+
+    ul.other-projects li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border-soft);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    ul.other-projects li:last-child {
+      border-bottom: none;
+    }
+
+    ul.other-projects strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    ul.other-projects .tech-mini {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-left: 0.4rem;
+    }
+
+    /* ==========================================================================
+       5. STACK TÉCNICO (agrupado por dominio, con enlaces a docs)
+       ========================================================================== */
+    dl.stack-grid {
+      display: grid;
+      grid-template-columns: 175px 1fr;
+      row-gap: 0.65rem;
+      column-gap: 1rem;
+      font-size: 0.92rem;
+    }
+
+    dl.stack-grid dt {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 0.88rem;
+    }
+
+    dl.stack-grid dd {
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    dl.stack-grid dd a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+    }
+
+    dl.stack-grid dd a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    /* ==========================================================================
+       6. FOOTER / CONTACTO
+       ========================================================================== */
+    footer.portfolio-footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-rule);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    footer.portfolio-footer a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ==========================================================================
+       7. RESPONSIVE MÓVIL
+       ========================================================================== */
+    @media (max-width: 640px) {
+      body { padding: 0; }
+
+      main.portfolio-container {
+        padding: 1.75rem 1.25rem;
+        border: none;
+      }
+
+      h1.hero-name { font-size: 1.6rem; }
+
+      dl.stack-grid {
+        grid-template-columns: 1fr;
+        row-gap: 0.2rem;
+      }
+
+      dl.stack-grid dd { margin-bottom: 0.6rem; }
+
+      .arch-flow {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .arch-node { min-width: 0; }
+
+      .arch-arrow {
+        text-align: center;
+        transform: rotate(90deg);
+      }
+    }
+
+    /* ==========================================================================
+       8. MODO IMPRESIÓN
+       ========================================================================== */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+        font-size: 10.5pt;
+        line-height: 1.4;
+      }
+
+      main.portfolio-container {
+        max-width: 100%;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+      }
+
+      a { text-decoration: none !important; color: #000000 !important; }
+
+      section.portfolio-section,
+      article.project { break-inside: avoid; }
+
+      .arch-flow { break-inside: avoid; }
+    }
+
+    /* ==========================================================================
+       9. MICRO-INTERACCIONES Y ACCESIBILIDAD
+       ========================================================================== */
+    @keyframes subtleFade {
+      from { opacity: 0.85; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    main.portfolio-container {
+      animation: subtleFade 180ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    article.project {
+      transition: border-color 150ms ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
-<body class="bg-obsidian text-slate-100 font-sans antialiased selection:bg-amberGold selection:text-obsidian overflow-x-hidden">
 
-    <!-- TOP BAR SIMPLIFICADO: Confianza en lenguaje común (no técnico) -->
-    <div class="bg-slate-950 border-b border-slate-800/80 text-xs text-slate-400 py-2.5 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-            <div class="flex items-center space-x-4 sm:space-x-6 flex-wrap">
-                <span class="flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span class="text-slate-300">Cotización sin compromiso en 24 horas</span>
-                </span>
-                <span class="hidden md:flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    Lima y todo el Perú
-                </span>
-                <span class="hidden lg:flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                    Habla directo con un ingeniero
-                </span>
-            </div>
-            <div class="flex items-center gap-4 ml-auto">
-                <a href="#cotizar" class="text-amberGold hover:text-amber-300 font-medium underline underline-offset-4 transition">
-                    Cotizar mi proyecto →
-                </a>
-            </div>
-        </div>
-    </div>
+<body>
 
-    <!-- HEADER -->
-    <header class="sticky top-0 z-40 backdrop-blur-md bg-obsidian/85 border-b border-slate-800/80 transition-all">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amberGold to-amber-600 flex items-center justify-center shadow-lg shadow-amberGold/20 group-hover:scale-105 transition">
-                    <svg class="w-6 h-6 text-obsidian" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                    </svg>
-                </div>
-                <div>
-                    <span class="font-display font-bold text-xl tracking-tight text-white block leading-none">VÉRTICE</span>
-                    <span class="font-mono text-[10px] tracking-widest text-amberGold uppercase block mt-1">Estructuras Metálicas</span>
-                </div>
-            </a>
+  <main class="portfolio-container">
 
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#ayudamos" class="hover:text-amberGold transition">Cómo te ayudamos</a>
-                <a href="#proyectos" class="hover:text-amberGold transition">Proyectos</a>
-                <a href="#proceso" class="hover:text-amberGold transition">Cómo trabajamos</a>
-                <a href="#faq" class="hover:text-amberGold transition">Preguntas</a>
-            </nav>
-
-            <div class="hidden md:flex items-center gap-3">
-                <a href="#cotizar" class="bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-sm px-5 py-3 rounded-lg cta-glow flex items-center gap-2">
-                    <span>Cotiza tu proyecto</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
-            </div>
-
-            <button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:text-amberGold">
-                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
-            <a href="#ayudamos" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Cómo te ayudamos</a>
-            <a href="#proyectos" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Proyectos</a>
-            <a href="#proceso" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Cómo trabajamos</a>
-            <a href="#faq" class="block py-2.5 px-3 rounded-lg hover:bg-slate-900 text-slate-200 font-medium">Preguntas</a>
-            <div class="pt-2">
-                <a href="#cotizar" class="w-full bg-amberGold text-obsidian font-display font-bold py-3.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg">
-                    <span>Cotiza tu proyecto</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
-            </div>
-        </div>
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <header class="hero">
+      <h1 class="hero-name">Luis Sullca Condore</h1>
+      <p class="hero-role">Backend Developer · .NET / Java / SQL</p>
+      <p class="hero-tagline">
+        Construyo APIs y sistemas con arquitecturas pragmáticas. Me importa menos la tecnología de moda
+        y más que el código se lea, se mantenga y no sorprenda a quien lo herede.
+      </p>
+      <ul class="contact-bar" aria-label="Información de contacto">
+        <li>Lima, Perú</li>
+        <li><a href="mailto:luis.sullca@ejemplo.com">luis.sullca@ejemplo.com</a></li>
+        <li><a href="https://github.com/Luis-Sullca" target="_blank" rel="noopener">github.com/Luis-Sullca</a></li>
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
     </header>
 
-    <!-- HERO: Claridad sobre complejidad. Un solo CTA primario. -->
-    <section class="relative bg-blueprint pt-12 pb-16 lg:pt-20 lg:pb-24 overflow-hidden border-b border-slate-800/80">
-        <div class="absolute top-0 right-1/4 w-[500px] h-[500px] bg-amberGold/10 rounded-full blur-[130px] pointer-events-none"></div>
-        <div class="absolute bottom-0 left-10 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                
-                <div class="lg:col-span-7 space-y-7">
-                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-xs text-slate-300">
-                        <span class="w-2 h-2 rounded-full bg-amberGold"></span>
-                        <span>Diseño, fabricación y montaje en todo el Perú</span>
-                    </div>
-
-                    <h1 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.15] tracking-tight text-balance">
-                        Estructuras metálicas que se montan rápido, <span class="text-transparent bg-clip-text bg-gradient-to-r from-amberGold via-amber-300 to-amberGold">duran décadas</span> y no te dan sorpresas.
-                    </h1>
-
-                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-                        Techos, coberturas, ampliaciones, naves y estructuras galvanizadas para tu taller, vivienda, almacén o planta industrial. Tú nos cuentas qué necesitas; nosotros ponemos la ingeniería, el acero y el montaje.
-                    </p>
-
-                    <!-- CTAs: uno principal, uno secundario discreto -->
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5">
-                        <a href="#cotizar" class="bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-base px-7 py-4 rounded-xl cta-glow flex items-center justify-center gap-3">
-                            <span>Cuéntanos qué necesitas construir</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-                        </a>
-                        <a href="#avanzado" class="text-slate-400 hover:text-amberGold text-sm font-medium underline underline-offset-4 transition text-center sm:text-left">
-                            ¿Ya tienes planos o proyecto definido? →
-                        </a>
-                    </div>
-
-                    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-400 pt-2">
-                        <span class="flex items-center gap-1.5">
-                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Visita técnica sin costo
-                        </span>
-                        <span class="flex items-center gap-1.5">
-                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Precio cerrado por contrato
-                        </span>
-                        <span class="flex items-center gap-1.5">
-                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Garantía estructural escrita
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Imagen con overlay suave -->
-                <div class="lg:col-span-5 relative">
-                    <div class="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-slate-900">
-                        <img 
-                            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85" 
-                            alt="Montaje de estructura metálica en Perú" 
-                            class="w-full h-[360px] sm:h-[440px] object-cover object-center brightness-90 contrast-110"
-                            onerror="this.src='https://placehold.co/800x600/111827/F59E0B?text=Estructuras+Metalicas+Peru'"
-                        >
-                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
-
-                        <div class="absolute bottom-4 left-4 right-4 bg-slate-950/95 backdrop-blur-md border border-slate-800 rounded-xl p-4">
-                            <div class="flex items-center justify-between gap-3">
-                                <div>
-                                    <span class="text-[10px] font-mono uppercase tracking-wider text-amberGold block">Obra reciente</span>
-                                    <h3 class="text-sm font-display font-bold text-white">Centro de Distribución Logística · Lurín</h3>
-                                </div>
-                                <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono text-xs whitespace-nowrap">Entregado</span>
-                            </div>
-                            <div class="grid grid-cols-3 gap-2 text-center font-mono mt-3">
-                                <div class="bg-slate-900/90 rounded-lg p-2">
-                                    <span class="text-[10px] text-slate-400 block">ÁREA</span>
-                                    <span class="text-xs font-bold text-white">3,450 m²</span>
-                                </div>
-                                <div class="bg-slate-900/90 rounded-lg p-2">
-                                    <span class="text-[10px] text-slate-400 block">LUZ LIBRE</span>
-                                    <span class="text-xs font-bold text-amberGold">38 m</span>
-                                </div>
-                                <div class="bg-slate-900/90 rounded-lg p-2">
-                                    <span class="text-[10px] text-slate-400 block">PLAZO</span>
-                                    <span class="text-xs font-bold text-white">42 días</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- ============================================================
+         SOBRE MÍ
+         ============================================================ -->
+    <section class="portfolio-section" aria-labelledby="sec-about">
+      <h2 id="sec-about" class="section-title">Sobre mí</h2>
+      <p class="about-text">
+        Estudio Desarrollo de Sistemas de Información y me interesa el backend porque las decisiones que importan
+        no se ven en una interfaz: están en cómo se modela un dominio, cómo se traza una transacción, o en
+        por qué una capa existe — o no.
+      </p>
+      <p class="about-text">
+        Trabajo principalmente con <strong>.NET</strong> (C#, ASP.NET Core, EF Core) y bases de datos relacionales.
+        Prefiero arquitecturas pragmáticas: monolito modular antes que microservicios prematuros, Vertical Slice
+        cuando el dominio es pequeño, y medir antes de optimizar. Busco equipos donde el código se lea más veces
+        de las que se escribe.
+      </p>
     </section>
 
-    <!-- CONFIANZA EN NÚMEROS (lenguaje simple) -->
-    <section class="bg-slate-950 border-b border-slate-800/80 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                <div class="border-l-2 border-amberGold pl-4">
-                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">+145 mil <span class="text-amberGold text-lg">m²</span></div>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">construidos en Lima y provincias.</p>
-                </div>
-                <div class="border-l-2 border-amberGold pl-4">
-                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">+15 <span class="text-amberGold text-lg">años</span></div>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">de garantía escrita en cada estructura.</p>
-                </div>
-                <div class="border-l-2 border-amberGold pl-4">
-                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">99.4<span class="text-amberGold text-lg">%</span></div>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">de obras entregadas en el plazo prometido.</p>
-                </div>
-                <div class="border-l-2 border-amberGold pl-4">
-                    <div class="font-display font-bold text-3xl sm:text-4xl text-white">0 <span class="text-amberGold text-lg">accidentes</span></div>
-                    <p class="text-xs sm:text-sm text-slate-400 mt-1">en 8 años de montajes.</p>
-                </div>
-            </div>
+    <!-- ============================================================
+         PROYECTOS — CASOS DE ESTUDIO
+         ============================================================ -->
+    <section class="portfolio-section" aria-labelledby="sec-projects">
+      <h2 id="sec-projects" class="section-title">Proyectos seleccionados</h2>
+
+      <!-- PROYECTO 1: SmartCita -->
+      <article class="project">
+        <div class="project-header">
+          <h3 class="project-title">SmartCita — Sistema de agendamiento y control clínico</h3>
+          <span class="project-year">2026</span>
         </div>
+        <p class="project-subtitle">Gestión de citas médicas e historiales clínicos para un consultorio veterinario.</p>
+        <p class="tech-line">ASP.NET Core · C# · EF Core · MediatR · FluentValidation · SQL Server · Angular</p>
+
+        <span class="project-label">Problema</span>
+        <p class="project-problem">
+          El consultorio coordinaba citas e historiales en hojas de cálculo que se desincronizaban entre recepción
+          y los doctores. No había una fuente única de verdad ni forma de auditar cambios. La operación crecía y el
+          error humano empezaba a costar dinero en citas duplicadas.
+        </p>
+
+        <span class="project-label">Decisiones clave</span>
+        <ul class="decisions">
+          <li><strong>Monolito modular con Vertical Slice</strong> en lugar de capas horizontales: el dominio era pequeño y los repositorios genéricos añadían ceremonia sin beneficio.</li>
+          <li><strong>MediatR para aislar casos de uso</strong>, dejando que FluentValidation interceptara en un pipeline sin mezclarse con la persistencia.</li>
+          <li><strong>EF Core con transacciones explícitas</strong> en SQL Server para el flujo de agendamiento, donde una cita doble era inaceptable.</li>
+          <li><strong>Corté una caché distribuida</strong>: el volumen no la justificaba y añadía una dependencia operativa que un equipo unipersonal no podía sostener.</li>
+        </ul>
+
+        <span class="project-label">Arquitectura</span>
+        <div class="arch-flow" role="img" aria-label="Cliente Angular se comunica con MediatR, que enruta al handler; FluentValidation intercepta la validación; Entity Framework Core persiste en SQL Server dentro de una transacción.">
+          <div class="arch-node">Angular SPA</div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node accent">POST /api/appointments</div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node">MediatR</div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node">FluentValidation</div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node">Handler + EF Core</div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node accent">SQL Server</div>
+        </div>
+        <p class="arch-caption">Flujo de una petición: validación en el pipeline, persistencia transaccional, respuesta tipada.</p>
+
+        <span class="project-label">Resultado</span>
+        <p class="project-result">
+          El endpoint de disponibilidad bajó de <strong>~800 ms a ~200 ms</strong> tras añadir un índice compuesto
+          en SQL Server. El flujo crítico de agendamiento quedó cubierto con pruebas de integración.
+        </p>
+      </article>
+
+      <!-- PROYECTO 2: Inventario Híbrido -->
+      <article class="project">
+        <div class="project-header">
+          <h3 class="project-title">Sistema de Inventario Híbrido — Desktop + Edge Serverless</h3>
+          <span class="project-year">2026</span>
+        </div>
+        <p class="project-subtitle">Cliente de escritorio en Java sincronizado con una API en el edge de Cloudflare.</p>
+        <p class="tech-line">Java (Desktop) · Cloudflare Workers · Cloudflare D1 (SQLite) · REST</p>
+
+        <span class="project-label">Problema</span>
+        <p class="project-problem">
+          El inventario se manejaba en una app de escritorio Java que no sincronizaba entre sucursales. Montar un
+          servidor tradicional implicaba costos fijos altos para una operación intermitente, y la latencia desde
+          provincia era un problema real.
+        </p>
+
+        <span class="project-label">Decisiones clave</span>
+        <ul class="decisions">
+          <li><strong>API en Cloudflare Workers</strong> en lugar de un VPS: cero infraestructura dedicada, despliegue en el edge y facturación por uso.</li>
+          <li><strong>Cloudflare D1 (SQLite en el edge)</strong> para mantener el modelo relacional sin pagar un motor administrado que no se iba a aprovechar.</li>
+          <li><strong>Modelo de datos compatible con SQL</strong> para poder migrar a Postgres o SQL Server si la operación lo exigía, sin reescribir el dominio.</li>
+        </ul>
+
+        <span class="project-label">Arquitectura</span>
+        <div class="arch-flow" role="img" aria-label="Cliente Java de escritorio se comunica vía HTTPS con la API de Cloudflare Workers, que persiste en Cloudflare D1 (SQLite en el edge).">
+          <div class="arch-node">Java Desktop</div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node accent">HTTPS · REST</div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node">Cloudflare Workers</div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node accent">Cloudflare D1</div>
+        </div>
+        <p class="arch-caption">Sincronización sin servidor dedicado: la lógica vive en el edge y el dato cerca del usuario.</p>
+
+        <span class="project-label">Resultado</span>
+        <p class="project-result">
+          Latencia de consulta notablemente reducida frente a un servidor centralizado y <strong>costo de
+          infraestructura fijo eliminado</strong>. La operación queda cubierta sin servidor que administrar.
+        </p>
+      </article>
+
+      <!-- PROYECTO 3: CalculoEstribos -->
+      <article class="project">
+        <div class="project-header">
+          <h3 class="project-title">CalculoEstribos — Automatización de metrados de acero</h3>
+          <span class="project-year">2026</span>
+        </div>
+        <p class="project-subtitle">Aplicación web que reemplaza el cálculo manual de estribos de construcción.</p>
+        <p class="tech-line">ASP.NET Core MVC · C# · Razor · Bootstrap</p>
+
+        <span class="project-label">Problema</span>
+        <p class="project-problem">
+          Los metrados de estribos se calculaban a mano en obra, propensos a error en longitudes de corte y con
+          desperdicio de material difícil de estimar. Un error de cálculo en una varilla significa dinero perdido
+          y, a veces, retrabajo.
+        </p>
+
+        <span class="project-label">Decisiones clave</span>
+        <ul class="decisions">
+          <li><strong>Lógica de dominio separada de la vista</strong>: las reglas de corte, desperdicio y geometría viven en el dominio, no en el controlador ni en Razor.</li>
+          <li><strong>Validación de parámetros geométricos en el dominio</strong>, con mensajes que explican el error al usuario en lugar de solo rechazarlo.</li>
+          <li><strong>UI deliberadamente simple</strong> en Razor + Bootstrap: el valor está en el cálculo, no en la presentación.</li>
+        </ul>
+
+        <span class="project-label">Arquitectura</span>
+        <div class="arch-flow" role="img" aria-label="El usuario ingresa parámetros geométricos, el dominio valida, un motor de cálculo produce el metrado y la lista de corte.">
+          <div class="arch-node">Parámetros</div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node accent">Validación de dominio</div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node">Motor de cálculo</div>
+          <span class="arch-arrow">→</span>
+          <div class="arch-node accent">Metrado + lista de corte</div>
+        </div>
+        <p class="arch-caption">Una sola fuente de verdad para longitudes, ángulos y desperdicio de material.</p>
+
+        <span class="project-label">Resultado</span>
+        <p class="project-result">
+          <strong>Reemplazó el cálculo manual</strong> eliminando errores de longitud y haciendo visible el
+          desperdicio de material antes de comprar la varilla.
+        </p>
+      </article>
+
+      <!-- OTROS PROYECTOS -->
+      <article class="project" style="border-bottom: none; padding-bottom: 0.5rem;">
+        <h3 class="project-title" style="margin-bottom: 0.75rem;">Otros proyectos</h3>
+        <ul class="other-projects">
+          <li>
+            <strong>Gestor de Tareas Android</strong>
+            <span class="tech-mini">Kotlin · MVVM · Room</span>
+            <br>App nativa con persistencia offline y arquitectura MVVM; vistas XML y capa de datos aislada.
+          </li>
+          <li>
+            <strong>Asistente virtual SISE Idiomas</strong>
+            <span class="tech-mini">Dialogflow ES · GitHub Pages</span>
+            <br>Agente conversacional embebido en la web del instituto para automatizar consultas frecuentes.
+          </li>
+        </ul>
+      </article>
     </section>
 
-    <!-- CÓMO TE AYUDAMOS: Por resultado, no por tipología -->
-    <section id="ayudamos" class="py-20 lg:py-24 bg-obsidian relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">¿Qué necesitas resolver?</span>
-                <h2 class="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight text-balance">
-                    Cuéntanos tu necesidad. Nosotros le ponemos la ingeniería.
-                </h2>
-                <p class="text-slate-400 text-sm sm:text-base mt-3">
-                    No necesitas saber de normas ni de planos. Elige la situación que más se parezca a la tuya y te orientamos.
-                </p>
-            </div>
+    <!-- ============================================================
+         STACK TÉCNICO
+         ============================================================ -->
+    <section class="portfolio-section" aria-labelledby="sec-stack">
+      <h2 id="sec-stack" class="section-title">Stack técnico</h2>
+      <dl class="stack-grid">
+        <dt>Lenguajes</dt>
+        <dd>C#, Java, Kotlin, TypeScript, SQL (T-SQL, PL/SQL), HTML5, CSS3</dd>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                
-                <!-- Card 1: Techos simples -->
-                <div class="group bg-slate-900/60 border border-slate-800 hover:border-amberGold/60 rounded-2xl p-7 transition-all duration-300">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amberGold/15 border border-amberGold/30 flex items-center justify-center shrink-0">
-                            <svg class="w-6 h-6 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V10"></path></svg>
-                        </div>
-                        <div>
-                            <h3 class="font-display font-bold text-xl text-white">Un techo para mi taller o vivienda</h3>
-                            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                                Coberturas galvanizadas, techos para patios, cocheras o almacenes pequeños. Rápido, resistente y sin complicaciones.
-                            </p>
-                            <div class="mt-3 text-xs font-mono text-slate-500">Desde 80 m² · Entrega en 3 a 5 semanas</div>
-                        </div>
-                    </div>
-                </div>
+        <dt>Backend</dt>
+        <dd>
+          <a href="https://learn.microsoft.com/aspnet/core/" target="_blank" rel="noopener">ASP.NET Core</a>,
+          <a href="https://learn.microsoft.com/ef/core/" target="_blank" rel="noopener">EF Core</a>,
+          <a href="https://github.com/jbogard/MediatR" target="_blank" rel="noopener">MediatR</a>,
+          <a href="https://docs.fluentvalidation.net/" target="_blank" rel="noopener">FluentValidation</a>,
+          NestJS, Prisma ORM
+        </dd>
 
-                <!-- Card 2: Ampliaciones -->
-                <div class="group bg-slate-900/60 border border-slate-800 hover:border-amberGold/60 rounded-2xl p-7 transition-all duration-300">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amberGold/15 border border-amberGold/30 flex items-center justify-center shrink-0">
-                            <svg class="w-6 h-6 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 20V10l8-6 8 6v10M9 20v-6h6v6"></path></svg>
-                        </div>
-                        <div>
-                            <h3 class="font-display font-bold text-xl text-white">Ampliar o ganar metros sin obra eterna</h3>
-                            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                                Entretechos, segundos pisos y mezanines metálicos que se instalan sin tumbar paredes y sin parar tu negocio.
-                            </p>
-                            <div class="mt-3 text-xs font-mono text-slate-500">Desde 100 m² · 5 a 8 semanas</div>
-                        </div>
-                    </div>
-                </div>
+        <dt>Arquitectura</dt>
+        <dd>Monolito Modular, Vertical Slice Architecture, CQRS, MVC, MVVM (Android)</dd>
 
-                <!-- Card 3: Naves / Almacenes -->
-                <div class="group bg-slate-900/60 border border-slate-800 hover:border-amberGold/60 rounded-2xl p-7 transition-all duration-300">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amberGold/15 border border-amberGold/30 flex items-center justify-center shrink-0">
-                            <svg class="w-6 h-6 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 21h18M5 21V7l7-4 7 4v14M9 9h6M9 13h6M9 17h6"></path></svg>
-                        </div>
-                        <div>
-                            <h3 class="font-display font-bold text-xl text-white">Naves y almacenes para mi operación</h3>
-                            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                                Estructuras de gran luz para plantas, centros logísticos o talleres con puente grúa. Ingeniería completa y certificada.
-                            </p>
-                            <div class="mt-3 text-xs font-mono text-slate-500">Desde 500 m² · 6 a 12 semanas</div>
-                        </div>
-                    </div>
-                </div>
+        <dt>Datos</dt>
+        <dd>
+          SQL Server, Oracle 21c XE (PDB), PostgreSQL,
+          <a href="https://developers.cloudflare.com/d1/" target="_blank" rel="noopener">Cloudflare D1</a> / SQLite
+        </dd>
 
-                <!-- Card 4: Arquitectura / gran luz -->
-                <div class="group bg-slate-900/60 border border-slate-800 hover:border-amberGold/60 rounded-2xl p-7 transition-all duration-300">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-amberGold/15 border border-amberGold/30 flex items-center justify-center shrink-0">
-                            <svg class="w-6 h-6 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3l9 6-9 6-9-6 9-6zM3 15l9 6 9-6"></path></svg>
-                        </div>
-                        <div>
-                            <h3 class="font-display font-bold text-xl text-white">Una obra especial o a medida</h3>
-                            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                                Coberturas deportivas, estructuras vistas de arquitectura, voladizos, residencias premium o proyectos con geometrías fuera de lo común.
-                            </p>
-                            <div class="mt-3 text-xs font-mono text-slate-500">Proyectos a medida · 8 a 16 semanas</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <dt>Infra & Herramientas</dt>
+        <dd>
+          <a href="https://developers.cloudflare.com/workers/" target="_blank" rel="noopener">Cloudflare Workers</a>,
+          Angular, Android SDK, Git, WSL2 (Ubuntu), PowerShell 7, Visual Studio, DBeaver
+        </dd>
 
-            <div class="mt-10 text-center">
-                <p class="text-slate-400 text-sm">¿No sabes en qué categoría cae tu proyecto?</p>
-                <a href="#cotizar" class="inline-block mt-2 text-amberGold hover:text-amber-300 font-semibold underline underline-offset-4">
-                    Escríbenos igual, te orientamos sin costo →
-                </a>
-            </div>
-        </div>
+        <dt>Idiomas</dt>
+        <dd>Español (nativo) · Inglés técnico (lectura)</dd>
+      </dl>
     </section>
 
-    <!-- PROYECTOS: Incluir caso pequeño primero (prueba social "de par a par") -->
-    <section id="proyectos" class="py-20 lg:py-24 bg-slate-950 border-y border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-                <div>
-                    <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">Proyectos reales</span>
-                    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Desde techos de taller hasta naves industriales</h2>
-                </div>
-                <p class="text-slate-400 text-sm max-w-md">
-                    Algunos de los proyectos que hemos entregado. Cada uno con su dossier de calidad, garantía escrita y fotos de avance.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- Proyecto pequeño -->
-                <div class="bg-obsidian border border-slate-800 rounded-2xl overflow-hidden flex flex-col">
-                    <div class="relative h-52 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Techo galvanizado taller" class="w-full h-full object-cover brightness-90 hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/111827/F59E0B?text=Techo+Galvanizado'">
-                        <span class="absolute top-3 left-3 bg-obsidian/90 border border-slate-700 text-amberGold font-mono text-[11px] px-2.5 py-1 rounded">
-                            Villa El Salvador, Lima
-                        </span>
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col">
-                        <h3 class="font-display font-bold text-lg text-white">Techo galvanizado para taller de carpintería</h3>
-                        <p class="text-slate-400 text-sm mt-2 flex-1">
-                            Cubrimos el patio de maniobras sin detener la producción. Estructura galvanizada instalada en un fin de semana.
-                        </p>
-                        <div class="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-slate-800 font-mono text-xs">
-                            <div>
-                                <span class="text-slate-500 block">ÁREA</span>
-                                <span class="text-white font-bold">120 m²</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-500 block">PLAZO</span>
-                                <span class="text-emerald-400 font-bold">3 semanas</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto grande 1 -->
-                <div class="bg-obsidian border border-slate-800 rounded-2xl overflow-hidden flex flex-col">
-                    <div class="relative h-52 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Centro Logístico Huachipa" class="w-full h-full object-cover brightness-90 hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/111827/F59E0B?text=Centro+Logistico'">
-                        <span class="absolute top-3 left-3 bg-obsidian/90 border border-slate-700 text-amberGold font-mono text-[11px] px-2.5 py-1 rounded">
-                            Huachipa, Lima
-                        </span>
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col">
-                        <h3 class="font-display font-bold text-lg text-white">Nave de procesamiento agroindustrial</h3>
-                        <p class="text-slate-400 text-sm mt-2 flex-1">
-                            Pórticos de gran luz con cerramiento termoaislante PIR y soporte para túneles de frío.
-                        </p>
-                        <div class="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-slate-800 font-mono text-xs">
-                            <div>
-                                <span class="text-slate-500 block">ÁREA</span>
-                                <span class="text-white font-bold">2,850 m²</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-500 block">PLAZO</span>
-                                <span class="text-emerald-400 font-bold">48 días</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto grande 2 -->
-                <div class="bg-obsidian border border-slate-800 rounded-2xl overflow-hidden flex flex-col">
-                    <div class="relative h-52 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Edificio corporativo" class="w-full h-full object-cover brightness-90 hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/111827/F59E0B?text=Edificio+Corporativo'">
-                        <span class="absolute top-3 left-3 bg-obsidian/90 border border-slate-700 text-amberGold font-mono text-[11px] px-2.5 py-1 rounded">
-                            Ate, Lima
-                        </span>
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col">
-                        <h3 class="font-display font-bold text-lg text-white">Edificio corporativo de 4 niveles</h3>
-                        <p class="text-slate-400 text-sm mt-2 flex-1">
-                            Estructura sismorresistente apernada con losa colaborante y protección contra fuego certificada.
-                        </p>
-                        <div class="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-slate-800 font-mono text-xs">
-                            <div>
-                                <span class="text-slate-500 block">ÁREA</span>
-                                <span class="text-white font-bold">1,420 m²</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-500 block">PLAZO</span>
-                                <span class="text-emerald-400 font-bold">54 días</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CÓMO TRABAJAMOS: 4 pasos simples, con opción técnica colapsada -->
-    <section id="proceso" class="py-20 bg-obsidian border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">Cómo trabajamos</span>
-                <h2 class="font-display font-bold text-3xl sm:text-4xl text-white text-balance">
-                    Un proceso simple, sin sorpresas
-                </h2>
-                <p class="text-slate-400 text-sm sm:text-base mt-3">
-                    El 85% de los sobrecostos vienen de improvisar en obra. Nosotros resolvemos todo antes de montar.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
-                    <div class="w-9 h-9 rounded-lg bg-amberGold/15 border border-amberGold/30 text-amberGold flex items-center justify-center font-mono font-bold text-sm mb-4">01</div>
-                    <h3 class="font-display font-bold text-lg text-white">Conversamos</h3>
-                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                        Nos cuentas qué necesitas. Sin tecnicismos, sin presión. Si no sabes exactamente, te ayudamos a definirlo.
-                    </p>
-                </div>
-
-                <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
-                    <div class="w-9 h-9 rounded-lg bg-amberGold/15 border border-amberGold/30 text-amberGold flex items-center justify-center font-mono font-bold text-sm mb-4">02</div>
-                    <h3 class="font-display font-bold text-lg text-white">Diseñamos</h3>
-                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                        Modelamos tu estructura en 3D con todas las conexiones resueltas. Ahí se detectan los problemas antes de fabricar.
-                    </p>
-                </div>
-
-                <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
-                    <div class="w-9 h-9 rounded-lg bg-amberGold/15 border border-amberGold/30 text-amberGold flex items-center justify-center font-mono font-bold text-sm mb-4">03</div>
-                    <h3 class="font-display font-bold text-lg text-white">Fabricamos</h3>
-                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                        Cortamos y soldamos en planta, bajo techo, con acero certificado y soldadores calificados. Sin improvisar en tu terreno.
-                    </p>
-                </div>
-
-                <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
-                    <div class="w-9 h-9 rounded-lg bg-amberGold/15 border border-amberGold/30 text-amberGold flex items-center justify-center font-mono font-bold text-sm mb-4">04</div>
-                    <h3 class="font-display font-bold text-lg text-white">Montamos</h3>
-                    <p class="text-slate-400 text-sm mt-2 leading-relaxed">
-                        Llevamos la estructura armada a tu obra, la izamos y aseguramos. Recibes tu proyecto con garantía y dossier de calidad.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Detalle técnico colapsado (divulgación progresiva) -->
-            <details class="mt-10 bg-slate-900/50 border border-slate-800 rounded-2xl p-6 group">
-                <summary class="flex items-center justify-between gap-4">
-                    <span class="text-sm font-medium text-slate-300">
-                        <span class="text-amberGold font-mono text-xs uppercase tracking-wider">Ver detalle técnico</span>
-                        <span class="block text-white font-display font-semibold mt-1">Cómo garantizamos la calidad (para ingenieros y proyectistas)</span>
-                    </span>
-                    <svg class="chev w-5 h-5 text-amberGold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <div class="mt-5 pt-5 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-5 text-sm text-slate-300">
-                    <div>
-                        <h4 class="font-display font-semibold text-white mb-1.5">Ingeniería</h4>
-                        <p class="leading-relaxed text-slate-400">Modelado BIM Tekla LOD 400, memoria de cálculo firmada CIP bajo Normas E.020, E.030 y E.090. Dossier de planos As-Built.</p>
-                    </div>
-                    <div>
-                        <h4 class="font-display font-semibold text-white mb-1.5">Acero y soldadura</h4>
-                        <p class="leading-relaxed text-slate-400">Acero ASTM A36 / A572 G50 certificado. Soldadores calificados AWS D1.1 (3G, 4G y 6G). Ensayos no destructivos (END) con ultrasonido y tintes penetrantes.</p>
-                    </div>
-                    <div>
-                        <h4 class="font-display font-semibold text-white mb-1.5">Protección anticorrosiva</h4>
-                        <p class="leading-relaxed text-slate-400">Granallado SSPC-SP6, base epóxica, acabado poliuretano alifático. En zonas costeras se aplica sistema marino C5-M. Galvanizado en caliente por inmersión (ASTM A123).</p>
-                    </div>
-                    <div>
-                        <h4 class="font-display font-semibold text-white mb-1.5">Seguridad y montaje</h4>
-                        <p class="leading-relaxed text-slate-400">Plan de izaje con grúas telescópicas, ingeniero SSOMA en obra, SCTR completo conforme a la Ley 29783. Cero accidentes en 8 años.</p>
-                    </div>
-                </div>
-            </details>
-        </div>
-    </section>
-
-    <!-- PREGUNTAS FRECUENTES -->
-    <section id="faq" class="py-20 bg-slate-950 border-t border-slate-800">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">Preguntas frecuentes</span>
-                <h2 class="font-display font-bold text-3xl text-white">Lo que suelen preguntarnos</h2>
-            </div>
-
-            <div class="space-y-3">
-                <div class="border border-slate-800 rounded-xl bg-slate-900/40 overflow-hidden">
-                    <button onclick="toggleFaq(0)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-semibold text-white hover:text-amberGold transition">
-                        <span>No tengo planos. ¿Pueden ayudarme igual?</span>
-                        <span id="faq-icon-0" class="font-mono text-amberGold text-xl shrink-0">+</span>
-                    </button>
-                    <div id="faq-body-0" class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed">
-                        Sí. Trabajamos también en modalidad "diseño + construcción": un ingeniero va a tu terreno, toma medidas, escucha lo que necesitas y nosotros desarrollamos el plano y el cálculo. Así optimizamos el acero y reduces el costo total de tu proyecto entre un 12% y 18%.
-                    </div>
-                </div>
-
-                <div class="border border-slate-800 rounded-xl bg-slate-900/40 overflow-hidden">
-                    <button onclick="toggleFaq(1)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-semibold text-white hover:text-amberGold transition">
-                        <span>¿Cuánto cuesta una estructura metálica?</span>
-                        <span id="faq-icon-1" class="font-mono text-amberGold text-xl shrink-0">+</span>
-                    </button>
-                    <div id="faq-body-1" class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed">
-                        Depende del área, la altura y la luz libre. Como referencia, un techo galvanizado simple arranca desde unos S/ 90-150 por m² instalado, mientras que naves industriales o estructuras con cerramiento térmico tienen otra escala. En todos los casos te damos un precio cerrado antes de empezar, sin adicionales después.
-                    </div>
-                </div>
-
-                <div class="border border-slate-800 rounded-xl bg-slate-900/40 overflow-hidden">
-                    <button onclick="toggleFaq(2)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-semibold text-white hover:text-amberGold transition">
-                        <span>¿Atienden fuera de Lima?</span>
-                        <span id="faq-icon-2" class="font-mono text-amberGold text-xl shrink-0">+</span>
-                    </button>
-                    <div id="faq-body-2" class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed">
-                        Sí. Fabricamos toda la estructura en nuestra planta de Lurín (condiciones controladas de calidad) y despachamos a cualquier departamento del Perú. Nuestras cuadrillas viajan para el montaje: Arequipa, Trujillo, Piura, Cusco, Ica, etc.
-                    </div>
-                </div>
-
-                <div class="border border-slate-800 rounded-xl bg-slate-900/40 overflow-hidden">
-                    <button onclick="toggleFaq(3)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-semibold text-white hover:text-amberGold transition">
-                        <span>¿Qué garantías me dan?</span>
-                        <span id="faq-icon-3" class="font-mono text-amberGold text-xl shrink-0">+</span>
-                    </button>
-                    <div id="faq-body-3" class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed">
-                        Contrato de suma alzada o precio unitario cerrado, cronograma vinculante con penalidad por mora a tu favor, pólizas CAR y SCTR vigentes, y al cierre te entregamos dossier de calidad completo (certificados de acero, protocolos de soldadura, planos As-Built). La garantía estructural es de 15 años por escrito.
-                    </div>
-                </div>
-
-                <div class="border border-slate-800 rounded-xl bg-slate-900/40 overflow-hidden">
-                    <button onclick="toggleFaq(4)" class="w-full px-6 py-4 text-left flex items-center justify-between gap-4 font-display font-semibold text-white hover:text-amberGold transition">
-                        <span>¿Cuánto demora una obra?</span>
-                        <span id="faq-icon-4" class="font-mono text-amberGold text-xl shrink-0">+</span>
-                    </button>
-                    <div id="faq-body-4" class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed">
-                        Un techo simple se entrega en 3-5 semanas. Ampliaciones y mezanines entre 5-8 semanas. Naves industriales entre 6 y 12 semanas según tamaño. El cronograma exacto lo defines junto con nuestro ingeniero al inicio.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AVANZADO: Para quien ya tiene proyecto definido (progressive disclosure) -->
-    <section id="avanzado" class="py-16 bg-obsidian border-t border-slate-800">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <details class="group bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
-                <summary class="flex items-center justify-between gap-4">
-                    <div>
-                        <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-1">Para ingenieros y proyectistas</span>
-                        <span class="block font-display font-bold text-white text-lg sm:text-xl">¿Ya tienes planos o especificaciones técnicas? Usa el especificador avanzado</span>
-                        <span class="block text-slate-400 text-sm mt-1">Calcula tonelaje preliminar, plazo estimado y esquema anticorrosivo según tu tipología y ubicación.</span>
-                    </div>
-                    <svg class="chev w-6 h-6 text-amberGold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-
-                <div class="mt-8 pt-8 border-t border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-                    <div class="lg:col-span-7 bg-obsidian/95 border border-slate-800 rounded-2xl p-6 space-y-6">
-                        <div>
-                            <label class="flex items-center justify-between text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
-                                <span>01. Tipología</span>
-                            </label>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="type-selector">
-                                <button type="button" data-type="nave" class="cfg-type-btn text-left p-3 rounded-lg border-2 border-amberGold bg-amberGold/10 transition flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded bg-amberGold text-obsidian font-mono font-bold text-xs flex items-center justify-center shrink-0">A</span>
-                                    <span class="font-display font-semibold text-xs text-white">Nave / Almacén</span>
-                                </button>
-                                <button type="button" data-type="comercial" class="cfg-type-btn text-left p-3 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs flex items-center justify-center shrink-0">B</span>
-                                    <span class="font-display font-semibold text-xs text-white">Mezanine / Edificación</span>
-                                </button>
-                                <button type="button" data-type="arquitectonica" class="cfg-type-btn text-left p-3 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs flex items-center justify-center shrink-0">C</span>
-                                    <span class="font-display font-semibold text-xs text-white">Arquitectura AESS</span>
-                                </button>
-                                <button type="button" data-type="cobertura" class="cfg-type-btn text-left p-3 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs flex items-center justify-center shrink-0">D</span>
-                                    <span class="font-display font-semibold text-xs text-white">Cobertura Gran Luz</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">02. Área estimada (m²)</label>
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="area-selector">
-                                <button type="button" data-area="150-500" class="cfg-area-btn p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition">
-                                    <div class="font-mono font-bold text-xs text-white">120–450</div>
-                                    <div class="text-[10px] text-slate-400 mt-0.5">Media</div>
-                                </button>
-                                <button type="button" data-area="500-1500" class="cfg-area-btn p-2.5 rounded-lg border-2 border-amberGold bg-amberGold/10 text-center transition">
-                                    <div class="font-mono font-bold text-xs text-white">450–1,500</div>
-                                    <div class="text-[10px] text-amberGold mt-0.5">Frecuente</div>
-                                </button>
-                                <button type="button" data-area="1500-3500" class="cfg-area-btn p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition">
-                                    <div class="font-mono font-bold text-xs text-white">1,500–3,500</div>
-                                    <div class="text-[10px] text-slate-400 mt-0.5">Gran luz</div>
-                                </button>
-                                <button type="button" data-area="3500+" class="cfg-area-btn p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition">
-                                    <div class="font-mono font-bold text-xs text-white">+3,500</div>
-                                    <div class="text-[10px] text-slate-400 mt-0.5">Planta</div>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div>
-                                <label for="cfg-zone" class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">03. Zona geográfica</label>
-                                <select id="cfg-zone" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-white focus:outline-none focus:border-amberGold">
-                                    <option value="costa">Lima / Costa (Zona Sísmica 4)</option>
-                                    <option value="costa_marina">Litoral &lt; 2km (Salinidad C5-M)</option>
-                                    <option value="sierra">Sierra (Viento, granizo, altura)</option>
-                                    <option value="norte_selva">Norte / Selva (Lluvia intensa)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="cfg-stage" class="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">04. Estado del proyecto</label>
-                                <select id="cfg-stage" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2.5 text-xs text-white focus:outline-none focus:border-amberGold">
-                                    <option value="expediente">Con planos / expediente</option>
-                                    <option value="arquitectura">Solo arquitectura</option>
-                                    <option value="terreno">Solo terreno</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-5 bg-gradient-to-b from-slate-900 to-obsidian border border-amberGold/40 rounded-2xl p-5">
-                        <div class="border-b border-slate-800 pb-3 mb-4">
-                            <span class="font-mono text-[10px] uppercase text-amberGold tracking-wider block">Pre-especificación</span>
-                            <h3 id="spec-title" class="font-display font-bold text-base text-white mt-0.5">Nave Industrial</h3>
-                        </div>
-
-                        <div class="space-y-2.5 font-mono text-xs">
-                            <div class="bg-slate-950/90 border border-slate-800 rounded-lg p-2.5">
-                                <span class="text-slate-400 block text-[10px] uppercase">Sistema</span>
-                                <span id="spec-system" class="text-white block mt-1 text-xs leading-relaxed">Pórticos rígidos ASTM A572 G50 + arriostres.</span>
-                            </div>
-                            <div class="grid grid-cols-2 gap-2">
-                                <div class="bg-slate-950/90 border border-slate-800 rounded-lg p-2.5">
-                                    <span class="text-slate-400 block text-[10px] uppercase">Tonelaje</span>
-                                    <span id="spec-tonnage" class="text-amberGold font-bold text-sm block mt-1">18–48 TN</span>
-                                </div>
-                                <div class="bg-slate-950/90 border border-slate-800 rounded-lg p-2.5">
-                                    <span class="text-slate-400 block text-[10px] uppercase">Plazo</span>
-                                    <span id="spec-timeline" class="text-emerald-400 font-bold text-sm block mt-1">5–8 sem</span>
-                                </div>
-                            </div>
-                            <div class="bg-slate-950/90 border border-slate-800 rounded-lg p-2.5">
-                                <span class="text-slate-400 block text-[10px] uppercase">Anticorrosivo</span>
-                                <span id="spec-coating" class="text-slate-200 block mt-1 text-xs leading-relaxed">SSPC-SP6 + epóxico + poliuretano.</span>
-                            </div>
-                        </div>
-
-                        <button type="button" onclick="transferSpecsToForm()" class="mt-4 w-full bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-xs py-3 px-4 rounded-lg cta-glow flex items-center justify-center gap-2">
-                            <span>Enviar parámetros al formulario</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </button>
-                    </div>
-                </div>
-            </details>
-        </div>
-    </section>
-
-    <!-- FORMULARIO PRINCIPAL SIMPLIFICADO -->
-    <section id="cotizar" class="py-20 lg:py-24 bg-gradient-to-b from-slate-950 to-obsidian border-t border-slate-800 relative">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="font-mono text-xs uppercase tracking-widest text-amberGold block mb-2">Cotiza tu proyecto</span>
-                <h2 class="font-display font-bold text-3xl sm:text-4xl text-white text-balance">
-                    Cuéntanos qué necesitas construir
-                </h2>
-                <p class="text-slate-400 text-sm sm:text-base mt-3">
-                    No necesitas planos ni saber de normas. En 24 horas un ingeniero te llama para orientarte y darte un presupuesto.
-                </p>
-            </div>
-
-            <div class="bg-slate-900/90 border border-slate-700/80 rounded-2xl p-6 sm:p-10 shadow-2xl">
-                <div id="sync-banner" class="hidden mb-6 p-3 rounded-lg bg-amberGold/15 border border-amberGold/40 text-xs font-mono text-amberGold">
-                    ✓ Parámetros técnicos cargados automáticamente. Solo completa tus datos.
-                </div>
-
-                <form id="consultation-form" class="space-y-5" onsubmit="handleFormSubmit(event)">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label for="client-name" class="block text-xs font-mono uppercase text-slate-300 mb-2">Tu nombre *</label>
-                            <input type="text" id="client-name" required placeholder="Ej. Carlos Mendoza" class="w-full bg-obsidian border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
-                        </div>
-                        <div>
-                            <label for="client-phone" class="block text-xs font-mono uppercase text-slate-300 mb-2">WhatsApp o teléfono *</label>
-                            <input type="tel" id="client-phone" required placeholder="+51 999 888 777" class="w-full bg-obsidian border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label for="form-need" class="block text-xs font-mono uppercase text-slate-300 mb-2">¿Qué necesitas construir? *</label>
-                        <textarea id="form-need" required rows="3" placeholder="Ej: Quiero cubrir el patio de mi taller con estructura galvanizada, son unos 120 m². No tengo planos todavía." class="w-full bg-obsidian border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold"></textarea>
-                        <p class="text-[11px] text-slate-500 mt-1.5">Con un croquis, una idea o un audio por WhatsApp nos basta para empezar.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label for="form-location" class="block text-xs font-mono uppercase text-slate-300 mb-2">¿Dónde está la obra? *</label>
-                            <input type="text" id="form-location" required placeholder="Ej. Villa El Salvador, Lima" class="w-full bg-obsidian border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
-                        </div>
-                        <div>
-                            <label for="client-email" class="block text-xs font-mono uppercase text-slate-300 mb-2">Correo (opcional)</label>
-                            <input type="email" id="client-email" placeholder="tucorreo@empresa.pe" class="w-full bg-obsidian border border-slate-700 rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amberGold">
-                        </div>
-                    </div>
-
-                    <!-- Hidden inputs para capturar el preset si viene del configurador avanzado -->
-                    <input type="hidden" id="form-project-type" value="nave">
-                    <input type="hidden" id="form-project-area" value="500-1500">
-
-                    <button type="submit" class="w-full bg-amberGold hover:bg-amberHover text-obsidian font-display font-bold text-base py-4 px-6 rounded-xl cta-glow flex items-center justify-center gap-3">
-                        <span>Enviar y recibir orientación gratis</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </button>
-
-                    <p class="text-[11px] text-slate-400 text-center">
-                        🔒 Tu información queda bajo confidencialidad. No te vamos a llamar para venderte otra cosa.
-                    </p>
-                </form>
-
-                <div id="form-success" class="hidden py-10 text-center space-y-4">
-                    <div class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-                    </div>
-                    <span class="font-mono text-xs uppercase text-amberGold tracking-widest block">Solicitud recibida</span>
-                    <h3 class="font-display font-bold text-2xl text-white">Gracias, te contactamos pronto</h3>
-                    <p class="text-slate-300 text-sm max-w-md mx-auto leading-relaxed">
-                        Tu código de referencia es <span id="ticket-code" class="font-mono font-bold text-amberGold">VRT-2026-894</span>. Un ingeniero te llamará en las próximas horas hábiles para conversar sobre tu proyecto.
-                    </p>
-                    <button type="button" onclick="resetConsultationForm()" class="mt-4 px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 transition">
-                        Enviar otra consulta
-                    </button>
-                </div>
-            </div>
-
-            <!-- Contacto directo alternativo -->
-            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <a href="https://wa.me/51999888777" target="_blank" rel="noopener" class="bg-slate-900/60 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-4 flex items-center gap-3 transition group">
-                    <div class="w-10 h-10 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0">
-                        <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    </div>
-                    <div>
-                        <div class="text-xs font-mono uppercase text-emerald-400">WhatsApp directo</div>
-                        <div class="text-sm font-semibold text-white group-hover:text-emerald-300 transition">Escríbenos ahora</div>
-                    </div>
-                </a>
-                <a href="tel:+5117000000" class="bg-slate-900/60 border border-slate-800 hover:border-amberGold/50 rounded-xl p-4 flex items-center gap-3 transition group">
-                    <div class="w-10 h-10 rounded-lg bg-amberGold/15 border border-amberGold/30 flex items-center justify-center shrink-0">
-                        <svg class="w-5 h-5 text-amberGold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                    </div>
-                    <div>
-                        <div class="text-xs font-mono uppercase text-amberGold">Llámanos</div>
-                        <div class="text-sm font-semibold text-white group-hover:text-amber-300 transition">(01) 700-0000</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-10 text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded bg-amberGold flex items-center justify-center text-obsidian font-display font-bold">V</div>
-                <div>
-                    <span class="font-display font-bold text-slate-200 block">VÉRTICE ESTRUCTURAS METÁLICAS S.A.C.</span>
-                    <span class="font-mono text-[11px]">RUC 20609481721 · Lima, Perú</span>
-                </div>
-            </div>
-            <div class="flex flex-wrap gap-6 text-slate-400 justify-center">
-                <a href="#ayudamos" class="hover:text-amberGold transition">Servicios</a>
-                <a href="#proyectos" class="hover:text-amberGold transition">Proyectos</a>
-                <a href="#proceso" class="hover:text-amberGold transition">Proceso</a>
-                <a href="#cotizar" class="hover:text-amberGold transition">Cotizar</a>
-            </div>
-            <div class="font-mono text-[11px] text-slate-500">
-                © 2026 VÉRTICE. Todos los derechos reservados.
-            </div>
-        </div>
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="portfolio-footer">
+      <div>
+        ¿Conversamos? <a href="mailto:luis.sullca@ejemplo.com">luis.sullca@ejemplo.com</a>
+      </div>
+      <div>
+        <a href="https://github.com/Luis-Sullca" target="_blank" rel="noopener">GitHub</a>
+        ·
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </footer>
 
-    <script>
-        // ===== Estado del configurador avanzado =====
-        const currentConfig = {
-            type: 'nave',
-            area: '500-1500',
-            zone: 'costa',
-            stage: 'expediente'
-        };
+  </main>
 
-        const specDatabase = {
-            nave: {
-                label: 'Nave Industrial / Almacén',
-                system: 'Pórticos rígidos ASTM A572 G50 + arriostres de techo.'
-            },
-            comercial: {
-                label: 'Mezanine / Edificación Comercial',
-                system: 'Vigas W + placa colaborante Steel Deck con conectores Nelson Stud.'
-            },
-            arquitectonica: {
-                label: 'Arquitectura AESS',
-                system: 'Perfiles tubulares ASTM A500 con soldadura al ras, acabado estético.'
-            },
-            cobertura: {
-                label: 'Cobertura de Gran Luz',
-                system: 'Arcos o tijerales espaciales con cobertura Aluzinc TR4 / termopanel.'
-            }
-        };
-
-        const areaMetrics = {
-            '150-500':    { label: '120–450 m²',     tonnage: '8–18 TN',   timeline: '3–5 sem' },
-            '500-1500':   { label: '450–1,500 m²',   tonnage: '18–52 TN',  timeline: '5–8 sem' },
-            '1500-3500':  { label: '1,500–3,500 m²', tonnage: '55–130 TN', timeline: '8–11 sem' },
-            '3500+':      { label: '+3,500 m²',      tonnage: '+140 TN',   timeline: 'Por fases' }
-        };
-
-        const zoneCoatings = {
-            costa:         'SSPC-SP6 + epóxico + poliuretano alifático.',
-            costa_marina:  'SSPC-SP10 + zinc + epóxico + poliuretano C5-M marino.',
-            sierra:        'SSPC-SP6 + epóxico + sobrecarga de viento/granizo.',
-            norte_selva:   'SSPC-SP6 + epóxico impermeable + drenaje reforzado.'
-        };
-
-        function updateConfiguratorUI() {
-            const typeInfo = specDatabase[currentConfig.type];
-            const areaInfo = areaMetrics[currentConfig.area];
-            const coating = zoneCoatings[currentConfig.zone];
-
-            document.getElementById('spec-title').textContent = typeInfo.label;
-            document.getElementById('spec-system').textContent = typeInfo.system;
-            document.getElementById('spec-tonnage').textContent = areaInfo.tonnage;
-            document.getElementById('spec-timeline').textContent = areaInfo.timeline;
-            document.getElementById('spec-coating').textContent = coating;
-
-            document.querySelectorAll('.cfg-type-btn').forEach(btn => {
-                const sel = btn.getAttribute('data-type') === currentConfig.type;
-                btn.className = sel
-                    ? 'cfg-type-btn text-left p-3 rounded-lg border-2 border-amberGold bg-amberGold/10 transition flex items-center gap-2'
-                    : 'cfg-type-btn text-left p-3 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 transition flex items-center gap-2';
-                const badge = btn.querySelector('span:first-child');
-                if (badge) badge.className = sel
-                    ? 'w-6 h-6 rounded bg-amberGold text-obsidian font-mono font-bold text-xs flex items-center justify-center shrink-0'
-                    : 'w-6 h-6 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs flex items-center justify-center shrink-0';
-            });
-
-            document.querySelectorAll('.cfg-area-btn').forEach(btn => {
-                const sel = btn.getAttribute('data-area') === currentConfig.area;
-                btn.className = sel
-                    ? 'cfg-area-btn p-2.5 rounded-lg border-2 border-amberGold bg-amberGold/10 text-center transition'
-                    : 'cfg-area-btn p-2.5 rounded-lg border border-slate-800 bg-slate-900/60 hover:border-slate-700 text-center transition';
-            });
-        }
-
-        document.querySelectorAll('.cfg-type-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                currentConfig.type = btn.getAttribute('data-type');
-                updateConfiguratorUI();
-            });
-        });
-        document.querySelectorAll('.cfg-area-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                currentConfig.area = btn.getAttribute('data-area');
-                updateConfiguratorUI();
-            });
-        });
-        document.getElementById('cfg-zone').addEventListener('change', e => {
-            currentConfig.zone = e.target.value;
-            updateConfiguratorUI();
-        });
-        document.getElementById('cfg-stage').addEventListener('change', e => {
-            currentConfig.stage = e.target.value;
-        });
-
-        function transferSpecsToForm() {
-            document.getElementById('form-project-type').value = currentConfig.type;
-            document.getElementById('form-project-area').value = currentConfig.area;
-            const needField = document.getElementById('form-need');
-            if (!needField.value.trim()) {
-                const typeLabel = specDatabase[currentConfig.type].label;
-                const areaLabel = areaMetrics[currentConfig.area].label;
-                needField.value = `Proyecto de tipo ${typeLabel}, escala ${areaLabel}.`;
-            }
-            document.getElementById('sync-banner').classList.remove('hidden');
-            document.getElementById('cotizar').scrollIntoView({ behavior: 'smooth' });
-            setTimeout(() => document.getElementById('client-name').focus(), 600);
-        }
-
-        // ===== Acordeón FAQ =====
-        function toggleFaq(index) {
-            const body = document.getElementById(`faq-body-${index}`);
-            const icon = document.getElementById(`faq-icon-${index}`);
-            const open = body.classList.contains('hidden');
-            body.classList.toggle('hidden');
-            icon.textContent = open ? '−' : '+';
-        }
-
-        // ===== Envío del formulario =====
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const ticket = 'VRT-2026-' + Math.floor(100 + Math.random() * 900);
-            document.getElementById('ticket-code').textContent = ticket;
-            document.getElementById('consultation-form').classList.add('hidden');
-            document.getElementById('sync-banner').classList.add('hidden');
-            document.getElementById('form-success').classList.remove('hidden');
-            document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        function resetConsultationForm() {
-            document.getElementById('consultation-form').reset();
-            document.getElementById('form-success').classList.add('hidden');
-            document.getElementById('consultation-form').classList.remove('hidden');
-        }
-
-        // ===== Menú móvil =====
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const iconOpen = document.getElementById('menu-icon-open');
-        const iconClose = document.getElementById('menu-icon-close');
-
-        mobileBtn.addEventListener('click', () => {
-            const hidden = mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            iconOpen.classList.toggle('hidden');
-            iconClose.classList.toggle('hidden');
-        });
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                iconOpen.classList.remove('hidden');
-                iconClose.classList.add('hidden');
-            });
-        });
-
-        // Abrir automáticamente el disclosure avanzado si el usuario llega con #avanzado
-        if (window.location.hash === '#avanzado') {
-            document.querySelector('#avanzado details')?.setAttribute('open', '');
-        }
-
-        updateConfiguratorUI();
-    </script>
 </body>
 </html>
